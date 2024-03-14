@@ -1,14 +1,98 @@
 <html>
   <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PS9S5Q3430"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-PS9S5Q3430"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-PS9S5Q3430');
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-PS9S5Q3430");
     </script>
+    <style>
+      /* Add your custom CSS styles here */
+      /* Example: */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f7ee; /* Light greenish background color */
+      }
+      h2 {
+        font-size: 28px;
+        color: #333; /* Adjust color as needed */
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .preview-section {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .preview-section img {
+        width: 90%;
+        max-width: 640px;
+        height: auto;
+      }
+      .video-section {
+        text-align: center;
+      }
+      .download-section {
+        text-align: center;
+      }
+      .download-section img {
+        width: 200px; /* Adjust width as needed */
+        margin-top: 20px;
+      }
+
+      /* Responsive layout */
+      @media only screen and (max-width: 600px) {
+        .container {
+          padding: 10px;
+        }
+      }
+    </style>
   </head>
-  Hello world
+  <body>
+    <div class="container">
+      <section class="preview-section">
+        <img src="./demo.png" alt="App Preview" />
+      </section>
+
+      <section class="video-section">
+        <h2>Compass Overlay</h2>
+        <iframe
+          width="560"
+          height="315"
+          src="https://youtube.com/shorts/ZBzCbd3yVhQ"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </section>
+
+      <section class="download-section">
+        <a
+          href="https://apps.apple.com/us/app/your-app-name/id6477355207"
+          target="_blank"
+        >
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/1200px-Download_on_the_App_Store_Badge.svg.png"
+            alt="Download on the App Store"
+          />
+        </a>
+      </section>
+    </div>
+  </body>
 </html>
