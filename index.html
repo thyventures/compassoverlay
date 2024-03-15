@@ -1,5 +1,31 @@
 <html>
   <head>
+    <title>Compass Overlay</title>
+    <link rel="icon" href="logo.png" type="image/x-icon" />
+    <meta
+      name="description"
+      content="Add compass direction to your floorplans"
+    />
+    <meta
+      name="keywords"
+      content="compass, floorplan, property, agents, 99, guru, sla, bto, hdb, direction, facing, unit, fengshui, feng, shui, app, tool"
+    />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta property="og:title" content="Compass Overlay" />
+    <meta
+      property="og:description"
+      content="Add compass direction to your floorplans"
+    />
+    <meta
+      property="og:image"
+      content="https://thyventures.github.io/compassoverlay/demo.png"
+    />
+    <meta
+      property="og:url"
+      content="https://thyventures.github.io/compassoverlay"
+    />
+    <meta property="og:type" content="website" />
+
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -15,84 +41,181 @@
       gtag("config", "G-PS9S5Q3430");
     </script>
     <style>
-      /* Add your custom CSS styles here */
-      /* Example: */
       body {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #f0f7ee; /* Light greenish background color */
-      }
-      h2 {
-        font-size: 28px;
-        color: #333; /* Adjust color as needed */
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        margin-bottom: 20px;
-      }
-
-      .container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-      }
-      .preview-section {
+        background-color: #f0f7ee;
+        display: flex;
+        justify-content: center;
         text-align: center;
-        margin-bottom: 20px;
       }
-      .preview-section img {
-        width: 90%;
-        max-width: 640px;
+      .main-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 960px;
+        align-items: center;
+      }
+      .top-container {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        /* background-color: pink; */
+      }
+      .bottom-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+      }
+      .info-section {
+        flex: 1;
+        padding-bottom: 1rem;
+        h2 {
+          font-size: 3rem;
+          margin-bottom: 1rem;
+        }
+        div {
+          font-size: 1rem;
+        }
+        img {
+          width: 100px;
+          margin-top: 20px;
+        }
+        #download-section {
+          text-align: center;
+        }
+      }
+      .phone-section {
+        flex: 1;
+        padding-bottom: 1rem;
+        text-align: center;
+      }
+      .phone-section img {
+        max-width: 200px;
         height: auto;
       }
+      .reviews-section {
+        flex: 1;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem;
+        display: flex;
+        width: 100%;
+      }
+      .review-card {
+        width: 50%;
+        max-width: 20rem;
+        background-color: white;
+        border-radius: 10px;
+        padding: 1rem;
+        margin: 1rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        h5 {
+          margin-top: 0rem;
+          margin-bottom: 1rem;
+        }
+        .review-text {
+          font-size: 0.8rem;
+        }
+        .review-author {
+          text-align: right;
+          font-size: 0.8rem;
+        }
+      }
       .video-section {
+        flex: 1;
         text-align: center;
+        width: 100%;
       }
-      .download-section {
-        text-align: center;
-      }
-      .download-section img {
-        width: 200px; /* Adjust width as needed */
-        margin-top: 20px;
-      }
-
-      /* Responsive layout */
-      @media only screen and (max-width: 600px) {
-        .container {
-          padding: 10px;
+      @media screen and (max-width: 640px) {
+        .top-container {
+          flex-direction: column;
+        }
+        .review-card {
+          width: 80%;
+          max-width: 80%;
         }
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <section class="preview-section">
-        <img src="./demo.png" alt="App Preview" />
-      </section>
-
-      <section class="video-section">
-        <h2>Compass Overlay</h2>
-        <iframe
-          width="560"
-          height="315"
-          src="https://youtube.com/shorts/ZBzCbd3yVhQ"
-          frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </section>
-
-      <section class="download-section">
-        <a
-          href="https://apps.apple.com/us/app/your-app-name/id6477355207"
-          target="_blank"
-        >
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/1200px-Download_on_the_App_Store_Badge.svg.png"
-            alt="Download on the App Store"
-          />
-        </a>
-      </section>
+    <div class="main-container">
+      <div class="top-container">
+        <section class="info-section">
+          <div>
+            <h2>Compass Overlay</h2>
+            <div>Savvy agent, efficient floorplans</div>
+          </div>
+          <div id="download-section">
+            <a
+              href="https://apps.apple.com/us/app/your-app-name/id6477355207"
+              target="_blank"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/1200px-Download_on_the_App_Store_Badge.svg.png"
+                alt="Download on the App Store"
+              />
+            </a>
+          </div>
+        </section>
+        <section class="phone-section">
+          <img src="./demo-image.png" alt="App Preview" />
+        </section>
+      </div>
+      <div class="bottom-container">
+        <section class="reviews-section">
+          <div class="review-card">
+            <h5>Useful tool when showing house</h5>
+            <div class="review-text">
+              This app is useful to show my buyers which part of the house gets
+              the afternoon sun.
+            </div>
+            <div class="review-author">Geraldine</div>
+          </div>
+          <div class="review-card">
+            <h5>Easy to use</h5>
+            <div class="review-text">
+              I create 3 floorplans a week and I just need a few seconds each
+              time to add the compass direction.
+            </div>
+            <div class="review-author">David Lew</div>
+          </div>
+          <div class="review-card">
+            <h5>No more direction questions</h5>
+            <div class="review-text">
+              Previously, I was spending so much time responding to questions on
+              facing of the house. Now I just upload a floorplan with a compass
+              overlayed on it. Saves me so much time!
+            </div>
+            <div class="review-author">shawn loh kl</div>
+          </div>
+          <div class="review-card">
+            <h5>Useful for feng shui</h5>
+            <div class="review-text">
+              My family care alot about feng shui and this app could give me the
+              precise direction of the house.
+            </div>
+            <div class="review-author">Michelle Tania</div>
+          </div>
+        </section>
+        <section class="video-section">
+          <iframe
+            width="100%"
+            height="500"
+            src="https://youtube.com/embed/ZBzCbd3yVhQ"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </section>
+      </div>
     </div>
   </body>
 </html>
