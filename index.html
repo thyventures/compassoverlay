@@ -40,6 +40,23 @@
 
       gtag("config", "G-PS9S5Q3430");
     </script>
+
+    <!-- google ads event snippet for View apple app store -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof url != "undefined") {
+            window.location = url;
+          }
+        };
+        gtag("event", "conversion", {
+          send_to: "AW-16492421632/61llCIvn35wZEIDEmbg9",
+          event_callback: callback,
+        });
+        return false;
+      }
+    </script>
+
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -220,6 +237,7 @@
           <a
             href="https://apps.apple.com/us/app/your-app-name/id6477355207"
             target="_blank"
+            onClick="gtag_report_conversion()"
           >
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/1200px-Download_on_the_App_Store_Badge.svg.png"
