@@ -18,7 +18,7 @@
     />
     <meta
       property="og:image"
-      content="https://thyventures.github.io/compassoverlay/demo.png"
+      content="https://thyventures.github.io/compassoverlay/compass-demo.png"
     />
     <meta
       property="og:url"
@@ -82,6 +82,10 @@
         width: 100%;
         /* background-color: pink; */
       }
+      .description-section {
+        flex: 1;
+        display: flex;
+      }
       .bottom-container {
         flex: 1;
         display: flex;
@@ -130,6 +134,7 @@
       }
       .phone-section {
         flex: 1;
+        padding-top: 1rem;
         padding-bottom: 1rem;
         text-align: center;
       }
@@ -182,6 +187,18 @@
         }
       }
     </style>
+    <script>
+      // List of image sources
+      const imageSources = ["./compass-demo.png", "./suncompass-demo.png"];
+
+      // Function to change image source every 5 seconds
+      let index = 0;
+      setInterval(() => {
+        const imageElement = document.getElementById("app-preview");
+        index = (index + 1) % imageSources.length;
+        imageElement.src = imageSources[index];
+      }, 5000); // Change image every 5 seconds (5000 milliseconds)
+    </script>
   </head>
   <body>
     <div class="main-container">
@@ -189,7 +206,7 @@
         <section class="info-section">
           <div>
             <h2>Compass Overlay</h2>
-            <div>Precise floorplan direction</div>
+            <div>Property Facing and Sun Direction App</div>
           </div>
           <div class="download-section">
             <div class="appstore">
@@ -217,18 +234,24 @@
               </a>
             </div>
           </div>
+          <div class="description-section">
+            See your property's precise direction at a glance.<br />Visualize
+            sun direction across different month's of the year.
+          </div>
         </section>
         <section class="phone-section">
-          <img src="./demo-image.png" alt="App Preview" />
+          <img id="app-preview" src="./compass-demo.png" alt="App Preview" />
         </section>
       </div>
       <div class="bottom-container">
         <section class="reviews-section">
           <div class="review-card">
-            <h5>Useful tool when house viewing</h5>
+            <h5>Sun direction changes throughout the year!</h5>
             <div class="review-text">
-              This app is useful to easily see which part of the house gets the
-              afternoon West sun.
+              Only after using Compass Overlay did I learn that sun direction
+              can change by up to 48 degrees across the year! With this I
+              managed to choose a home that does not get direct west sun through
+              out the year!
             </div>
             <div class="review-author">Geraldine</div>
           </div>
@@ -262,7 +285,7 @@
           <iframe
             width="60%"
             height="500px"
-            src="https://youtube.com/embed/ZBzCbd3yVhQ?version=3&autoplay=1&loop=1&frameborder=0&mute=1&playlist=ZBzCbd3yVhQ"
+            src="https://youtube.com/embed/VfxFOZ00dIQ?version=3&autoplay=1&loop=1&frameborder=0&mute=1&playlist=VfxFOZ00dIQ"
             frameborder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
