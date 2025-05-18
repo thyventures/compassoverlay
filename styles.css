@@ -123,8 +123,8 @@ nav ul li a {
   max-width: 45%;
 }
 
-.hero h2 {
-  font-size: 2rem; /* Slightly smaller font */
+.hero h2, .hero h1.main-heading {
+  font-size: 2rem;
   margin-bottom: 0.75rem;
   color: var(--primary-color);
   line-height: 1.2;
