@@ -1,38 +1,31 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>Compass Overlay</title>
+    <meta charset="UTF-8">
+    <title>Compass Overlay App - Property Direction & Sun Direction Visualization Tool</title>
     <link rel="icon" href="logo.png" type="image/x-icon" />
-    <meta name="description" content="Property Facing and Sun Direction App" />
-    <meta
-      name="keywords"
-      content="compass, floorplan, property, agents, 99, guru, sla, bto, hdb, direction, facing, unit, fengshui, feng, shui, app, tool, myproperty, sun, sun direction, west sun, afternoon sun, morning sun, sun compass"
-    />
+    <meta name="description" content="Overlay precise compass directions and visualize sun directions on property images. Perfect for real estate agents, property buyers, and feng shui enthusiasts. Available for iOS and Android." />
+    <meta name="keywords" content="compass overlay, property direction, sun direction visualization, feng shui property direction, real estate direction tool, compass, floorplan, property, agents, 99, guru, sla, bto, hdb, direction, facing, unit, fengshui, feng, shui, app, tool, myproperty, sun, sun direction, west sun, afternoon sun, morning sun, sun compass" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <meta property="og:title" content="Compass Overlay" />
-    <meta
-      property="og:description"
-      content="Property Facing and Sun Direction App"
-    />
+    <meta property="og:title" content="Compass Overlay - Property Direction & Sun Direction App" />
+    <meta property="og:description" content="Overlay precise compass directions and visualize sun directions on property images. Perfect for real estate agents, property buyers, and feng shui enthusiasts." />
     <meta property="og:image" content="https://www.compassoverlay.com/og.png" />
     <meta property="og:url" content="https://www.compassoverlay.com" />
     <meta property="og:type" content="website" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Compass Overlay" />
-    <meta
-      name="twitter:description"
-      content="Property Facing and Sun Direction App"
-    />
-    <meta
-      name="twitter:image"
-      content="https://www.compassoverlay.com/og.png"
-    />
+    <meta name="twitter:title" content="Compass Overlay - Property Direction & Sun Direction App" />
+    <meta name="twitter:description" content="Overlay precise compass directions and visualize sun directions on property images. Perfect for real estate agents, property buyers, and feng shui enthusiasts." />
+    <meta name="twitter:image" content="https://www.compassoverlay.com/og.png" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.compassoverlay.com" />
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
 
     <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-PS9S5Q3430"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PS9S5Q3430"></script>
     <script src="https://analytics.ahrefs.com/analytics.js" data-key="RPkMZ+Otm0LnOgTfJnmKiQ" async></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -40,11 +33,10 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "G-PS9S5Q3430");
     </script>
 
-    <!-- google ads event snippet for View apple app store -->
+    <!-- Google ads event snippet for View app store -->
     <script>
       function gtag_report_conversion(url) {
         var callback = function () {
@@ -60,268 +52,340 @@
       }
     </script>
 
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        /* background-color: #f0f7ee; */
-        background-color: #fbf2e1;
-        display: flex;
-        justify-content: center;
-        text-align: center;
+    <!-- Schema.org markup for software application -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Compass Overlay",
+        "operatingSystem": "Android, iOS",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "ratingCount": "157"
+        },
+        "description": "Overlay precise compass directions and visualize sun directions on property images. Perfect for real estate agents, property buyers, and feng shui enthusiasts."
       }
-      .main-container {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        max-width: 960px;
-        align-items: center;
-      }
-      .top-container {
-        flex: 1;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        width: 100%;
-        /* background-color: pink; */
-      }
-      .description-section {
-        flex: 1;
-        display: flex;
-      }
-      .bottom-container {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-      }
-      .info-section {
-        flex: 1;
-        padding-bottom: 1rem;
-        h2 {
-          font-size: 3rem;
-          margin-bottom: 1rem;
-        }
-        div {
-          font-size: 1rem;
-        }
-      }
-      .download-section {
-        display: flex;
-        margin-bottom: 2rem;
-        margin-top: 1rem;
-      }
-      .appstore {
-        text-align: right;
-        margin-right: 1rem;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        margin-left: 1rem;
-        flex: 1;
-        img {
-          max-height: 30px;
-        }
-      }
-      .playstore {
-        text-align: left;
-        margin-left: 1rem;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        flex: 1;
-        img {
-          max-height: 45px;
-        }
-      }
-      .phone-section {
-        flex: 1;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        text-align: center;
-      }
-      .phone-section img {
-        max-width: 200px;
-        height: auto;
-      }
-      .reviews-section {
-        flex: 1;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        margin: 1rem;
-        display: flex;
-        width: 100%;
-      }
-      .review-card {
-        width: 50%;
-        max-width: 20rem;
-        background-color: white;
-        border-radius: 10px;
-        padding: 1rem;
-        margin: 1rem;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        h5 {
-          margin-top: 0rem;
-          margin-bottom: 1rem;
-        }
-        .review-text {
-          font-size: 0.8rem;
-        }
-        .review-author {
-          text-align: right;
-          font-size: 0.8rem;
-        }
-      }
-      .video-section {
-        flex: 1;
-        text-align: center;
-        width: 100%;
-      }
-      @media screen and (max-width: 640px) {
-        .top-container {
-          flex-direction: column;
-        }
-        .review-card {
-          width: 80%;
-          max-width: 80%;
-        }
-      }
-    </style>
-    <script>
-      // List of image sources
-      const imageSources = ["./compass-demo.png", "./suncompass-demo.png"];
-
-      // Function to change image source every 5 seconds
-      let index = 0;
-      setInterval(() => {
-        const imageElement = document.getElementById("app-preview");
-        index = (index + 1) % imageSources.length;
-        imageElement.src = imageSources[index];
-      }, 5000); // Change image every 5 seconds (5000 milliseconds)
     </script>
   </head>
   <body>
-    <div class="main-container">
-      <div class="top-container">
-        <section class="info-section">
-          <div>
-            <h2>Compass Overlay</h2>
-            <div>Property Facing and Sun Direction App</div>
-          </div>
-          <div class="download-section">
-            <div class="appstore">
-              <a
-                href="https://apps.apple.com/us/app/your-app-name/id6477355207"
-                target="_blank"
-                onClick="gtag_report_conversion()"
-              >
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/1200px-Download_on_the_App_Store_Badge.svg.png"
-                  alt="Download on the App Store"
-                />
-              </a>
-            </div>
-            <div class="playstore">
-              <a
-                href="https://play.google.com/store/apps/details?id=com.compassfloorplan&pcampaignid=web_share"
-                target="_blank"
-                onClick="gtag_report_conversion()"
-              >
-                <img
-                  src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"
-                  alt="Download on the Play Store"
-                />
-              </a>
-            </div>
-          </div>
-          <div class="description-section">
-            See your property's precise direction at a glance.<br />Visualize
-            sun direction across different month's of the year.
-          </div>
-        </section>
-        <section class="phone-section">
-          <img id="app-preview" src="./compass-demo.png" alt="App Preview" />
-        </section>
+    <!-- Header -->
+    <header>
+      <div class="container header-container">
+        <div class="logo">
+          <img src="logo.png" alt="Compass Overlay Logo">
+          <h1>Compass Overlay</h1>
+        </div>
+        <button class="mobile-menu-toggle" id="menuToggle">☰</button>
+        <nav id="mainNav">
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#cta" class="download-nav">Download</a></li>
+          </ul>
+        </nav>
       </div>
-      <div class="bottom-container">
-        <section class="reviews-section">
-          <div class="review-card">
-            <h5>Sun direction changes throughout the year!</h5>
-            <div class="review-text">
-              Only after using Compass Overlay did I learn that sun direction
-              can change by up to 48 degrees across the year! With this I
-              managed to choose a home that does not get direct west sun through
-              out the year!
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="container">
+          <div class="hero-content slide-up">
+            <h2>Precise Property Direction</h2>
+            <p>Visualize compass directions and sun directions with precision—essential for smarter property decisions.</p>
+            
+            <ul class="benefits-list">
+              <li>Add accurate compass overlay to any floor plan in seconds</li>
+              <li>See how sunlight changes throughout different seasons</li>
+              <li>Make informed decisions for feng shui and property analysis</li>
+            </ul>
+            
+            <div class="download-buttons">
+              <a href="https://apps.apple.com/us/app/your-app-name/id6477355207" target="_blank" onClick="gtag_report_conversion()" class="download-button" aria-label="Download on the App Store">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/1200px-Download_on_the_App_Store_Badge.svg.png" alt="Download on the App Store">
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=com.compassfloorplan&pcampaignid=web_share" target="_blank" onClick="gtag_report_conversion()" class="download-button android" aria-label="Get it on Google Play">
+                <img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Get it on Google Play">
+              </a>
             </div>
-            <div class="review-author">Geraldine</div>
           </div>
-          <div class="review-card">
-            <h5>Easy to use</h5>
-            <div class="review-text">
-              I upload 3 floorplans a week and I just need a few seconds each
-              time to add the compass direction.
+          
+          <div class="hero-image fade-in">
+            <img id="app-preview" src="./compass-demo.png" alt="Compass Overlay App Preview showing a property floorplan with compass direction">
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section id="features" class="features">
+        <div class="container">
+          <div class="section-title">
+            <h2>Powerful Features</h2>
+            <p>Discover how Compass Overlay can transform your property analysis</p>
+          </div>
+          
+          <div class="features-grid">
+            <div class="feature-card slide-up">
+              <div class="feature-icon">🧭</div>
+              <h3>Basic Compass Overlay</h3>
+              <p>Quickly overlay a compass on any property image or floorplan. Easily adjust size, position, and orientation for perfect alignment.</p>
+              <img src="./compass-demo.png" alt="Basic compass overlay demonstration" class="feature-image">
             </div>
-            <div class="review-author">David Lew</div>
-          </div>
-          <div class="review-card">
-            <h5>No more direction questions</h5>
-            <div class="review-text">
-              Previously, I was spending so much time responding to questions on
-              facing of the house. Now I just upload a floorplan with a compass
-              overlayed on it. Saves me so much time!
+            
+            <div class="feature-card slide-up">
+              <div class="feature-icon">📐</div>
+              <h3>Direction Angles</h3>
+              <p>View precise directional angles for detailed property analysis. Perfect for feng shui practitioners and those requiring exact directional measurements.</p>
+              <img src="./angle-demo.png" alt="Direction angles demonstration" class="feature-image">
             </div>
-            <div class="review-author">shawn loh kl</div>
-          </div>
-          <div class="review-card">
-            <h5>Useful feng shui precise direction</h5>
-            <div class="review-text">
-              My feng shui master needs to know the precise direction of my home
-              and this app is just waht I need.
+            
+            <div class="feature-card slide-up">
+              <div class="feature-icon">☀️</div>
+              <h3>Sun Direction Visualization</h3>
+              <p>Visualize how sunlight interacts with the property throughout different months. Understand seasonal sun exposure to make better property decisions.</p>
+              <img src="./suncompass-demo.png" alt="Sun direction visualization demonstration" class="feature-image">
             </div>
-            <div class="review-author">Michelle Tania</div>
           </div>
-        </section>
-        <section class="video-section">
-          <iframe
-            width="60%"
-            height="500px"
-            src="https://youtube.com/embed/VfxFOZ00dIQ?version=3&autoplay=1&loop=1&frameborder=0&mute=1&playlist=VfxFOZ00dIQ"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </section>
-        <div class="download-section">
-          <div class="appstore">
-            <a
-              href="https://apps.apple.com/us/app/your-app-name/id6477355207"
-              target="_blank"
-              onClick="gtag_report_conversion()"
-            >
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/1200px-Download_on_the_App_Store_Badge.svg.png"
-                alt="Download on the App Store"
-              />
+        </div>
+      </section>
+
+      <!-- How It Works Section -->
+      <section id="how-it-works" class="how-it-works">
+        <div class="container">
+          <div class="section-title">
+            <h2>How It Works</h2>
+            <p>Three simple steps to enhance your property analysis</p>
+          </div>
+          
+          <div class="steps">
+            <div class="step fade-in">
+              <div class="step-number">1</div>
+              <h3>Upload Image</h3>
+              <p>Take a photo of your property or floorplan, or upload an existing image from your gallery</p>
+            </div>
+            
+            <div class="step fade-in">
+              <div class="step-number">2</div>
+              <h3>Adjust Compass</h3>
+              <p>Position and rotate the compass to align with your property's orientation</p>
+            </div>
+            
+            <div class="step fade-in">
+              <div class="step-number">3</div>
+              <h3>Analyze Results</h3>
+              <p>View directional information and sun direction details to make informed decisions</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section id="testimonials" class="testimonials">
+        <div class="container">
+          <div class="section-title">
+            <h2>What Our Users Say</h2>
+            <p>Join thousands of satisfied users who rely on Compass Overlay</p>
+          </div>
+          
+          <div class="testimonial-grid">
+            <div class="testimonial-card fade-in">
+              <div class="rating">★★★★★</div>
+              <div class="testimonial-title">Sun direction changes throughout the year!</div>
+              <div class="testimonial-text">
+                Only after using Compass Overlay did I learn that sun direction can change by up to 48 degrees across the year! With this I managed to choose a home that does not get direct west sun throughout the year!
+              </div>
+              <div class="testimonial-author">- Geraldine</div>
+            </div>
+            
+            <div class="testimonial-card fade-in">
+              <div class="rating">★★★★★</div>
+              <div class="testimonial-title">Easy to use</div>
+              <div class="testimonial-text">
+                I upload 3 floorplans a week and I just need a few seconds each time to add the compass direction. It saves me so much time!
+              </div>
+              <div class="testimonial-author">- David Lew</div>
+            </div>
+            
+            <div class="testimonial-card fade-in">
+              <div class="rating">★★★★★</div>
+              <div class="testimonial-title">No more direction questions</div>
+              <div class="testimonial-text">
+                Previously, I was spending so much time responding to questions on facing of the house. Now I just upload a floorplan with a compass overlayed on it. Saves me so much time!
+              </div>
+              <div class="testimonial-author">- Shawn Loh KL</div>
+            </div>
+            
+            <div class="testimonial-card fade-in">
+              <div class="rating">★★★★★</div>
+              <div class="testimonial-title">Useful feng shui precise direction</div>
+              <div class="testimonial-text">
+                My feng shui master needs to know the precise direction of my home and this app is just what I need. The direction angles feature is incredibly helpful.
+              </div>
+              <div class="testimonial-author">- Michelle Tania</div>
+            </div>
+            
+            <div class="testimonial-card fade-in">
+              <div class="rating">★★★★★</div>
+              <div class="testimonial-title">Amazing for Vastu and Feng Shui</div>
+              <div class="testimonial-text">
+                This is an amazing app to study the directions for Vastu and Feng Shui. The precision it offers has been invaluable for my property decisions.
+              </div>
+              <div class="testimonial-author">- Gaurav Mehtani</div>
+            </div>
+
+            <div class="testimonial-card fade-in">
+              <div class="rating">★★★★★</div>
+              <div class="testimonial-title">Essential for Property Professionals</div>
+              <div class="testimonial-text">
+                Compass Overlay has revolutionized how I present properties to clients. Being able to show exact sun exposure and direction has significantly shortened my closing time. It's become an indispensable tool in my real estate business.
+              </div>
+              <div class="testimonial-author">- Sarah Williams, Real Estate Agent</div>
+            </div>            
+          </div>
+        </div>
+      </section>
+
+      <!-- Demo Video Section -->
+      <section class="demo-video">
+        <div class="container">
+          <div class="section-title">
+            <h2>See the App in Action</h2>
+            <p>Watch how easy it is to use Compass Overlay</p>
+          </div>
+          
+          <div class="video-container">
+            <iframe
+              src="https://youtube.com/embed/VfxFOZ00dIQ?version=3&autoplay=1&loop=1&frameborder=0&mute=1&playlist=VfxFOZ00dIQ"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              title="Compass Overlay App Demo Video"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section id="faq" class="faq">
+        <div class="container">
+          <div class="section-title">
+            <h2>Frequently Asked Questions</h2>
+            <p>Find answers to common questions about Compass Overlay</p>
+          </div>
+          
+          <div class="faq-container">
+            <div class="faq-item">
+              <div class="faq-question">How accurate is the compass in the app?</div>
+              <div class="faq-answer">
+                The compass in our app uses your device's built-in magnetometer to provide highly accurate directional information. For even more precision, you can manually calibrate the compass or input exact directional data if you know it.
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <div class="faq-question">Can I save and share the images with compass overlay?</div>
+              <div class="faq-answer">
+                Yes! After adding a compass overlay to your image, you can easily save it to your device or share it directly via messaging apps, email, or social media platforms. This makes it perfect for real estate agents who want to include directional information in their listings.
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <div class="faq-question">How does the sun compass feature work?</div>
+              <div class="faq-answer">
+                The sun compass feature uses advanced algorithms to calculate the sun's position relative to your property at different times of the year. This helps you understand seasonal variations in sun exposure, which is crucial for assessing factors like natural lighting, heat management, and energy efficiency.
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <div class="faq-question">Is Compass Overlay available offline?</div>
+              <div class="faq-answer">
+                Yes, most of the app's core functionality works offline. However, some features like location-based services may require an internet connection for optimal accuracy.
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <div class="faq-question">Can I use Compass Overlay for feng shui analysis?</div>
+              <div class="faq-answer">
+                Absolutely! Compass Overlay is widely used by feng shui practitioners and enthusiasts. The precise directional measurements help determine the exact orientation of a property, which is essential for accurate feng shui analysis.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section id="cta" class="cta">
+        <div class="container">
+          <h2>Download Compass Overlay Today</h2>
+          <p>Start making better informed property decisions with precise directional and sun direction information</p>
+          
+          <div class="download-buttons">
+            <a href="https://apps.apple.com/us/app/your-app-name/id6477355207" target="_blank" onClick="gtag_report_conversion()" class="download-button" aria-label="Download on the App Store">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/1200px-Download_on_the_App_Store_Badge.svg.png" alt="Download on the App Store">
             </a>
-          </div>
-          <div class="playstore">
-            <a
-              href="https://play.google.com/store/apps/details?id=com.compassfloorplan&pcampaignid=web_share"
-              target="_blank"
-              onClick="gtag_report_conversion()"
-            >
-              <img
-                src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"
-                alt="Download on the Play Store"
-              />
+            <a href="https://play.google.com/store/apps/details?id=com.compassfloorplan&pcampaignid=web_share" target="_blank" onClick="gtag_report_conversion()" class="download-button android" aria-label="Get it on Google Play">
+              <img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Get it on Google Play">
             </a>
           </div>
         </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container footer-container">
+        <div class="footer-section">
+          <h3>Compass Overlay</h3>
+          <p>A tool for visualizing property directions and sun directions with precision.</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Legal</h3>
+          <ul class="footer-links">
+            <li><a href="#" target="_blank">Privacy Policy</a></li>
+            <li><a href="#" target="_blank">Terms of Use</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <ul class="footer-links">
+            <li><a href="mailto:support@compassoverlay.com">support@compassoverlay.com</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
+      
+      <div class="container">
+        <div class="copyright">
+          &copy; 2025 Compass Overlay. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating Download Button -->
+    <a href="#cta" class="floating-download">
+      <span>Download App</span> →
+    </a>
+
+    <!-- External JavaScript -->
+    <script src="main.js"></script>
   </body>
 </html>

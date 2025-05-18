@@ -1,0 +1,751 @@
+/* styles.css */
+:root {
+  --primary-color: #3a7b54;
+  --secondary-color: #f8b500;
+  --text-color: #333333;
+  --background-color: #fbf9f3;
+  --card-background: #ffffff;
+  --accent-color: #e67e22;
+  --light-accent: #fef5e7;
+  --border-radius: 10px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+}
+
+/* Add smooth scrolling behavior for all users */
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+  background-color: var(--card-background);
+  box-shadow: var(--box-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 1.5rem;
+}
+
+nav ul li a {
+  font-weight: 500;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+/* Hero Section Styles - REVISED for better viewport fit */
+.hero {
+  padding: 2rem 0; /* Reduced padding */
+  background: linear-gradient(135deg, #f6f9f6 0%, #f0f7ee 100%);
+  border-radius: var(--border-radius);
+  margin: 2rem 0;
+}
+
+.hero .container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-content {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem; /* Reduced padding */
+  max-width: 45%;
+}
+
+.hero h2 {
+  font-size: 2rem; /* Slightly smaller font */
+  margin-bottom: 0.75rem;
+  color: var(--primary-color);
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 50%;
+  max-height: 80vh; /* Limit image height */
+}
+
+.hero-image img {
+  max-width: 100%;
+  max-height: 75vh; /* Limit image height */
+  object-fit: contain; /* Preserve aspect ratio */
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.benefits-list {
+  margin: 1rem 0;
+}
+
+.benefits-list li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: flex-start;
+  font-size: 0.95rem; /* Slightly smaller font */
+}
+
+.benefits-list li:before {
+  content: "✓";
+  color: var(--primary-color);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-right: 0.5em;
+  margin-top: 0.2em;
+}
+
+/* Download Buttons */
+.download-buttons {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  justify-content: center;
+}
+
+.download-button {
+  display: inline-block;
+  transition: var(--transition);
+  width: 160px; /* Fixed width for all download buttons */
+  height: 48px; /* Fixed height for all download buttons */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.android{
+  height: 60px;
+  margin-top: -5px;
+  width: 180px;
+}
+
+.download-button:hover {
+  transform: translateY(-3px);
+}
+
+.download-button img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Features Section */
+.features {
+  padding: 4rem 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title h2 {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.section-title h2:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: var(--secondary-color);
+}
+
+.section-title p {
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  background-color: var(--card-background);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card h3 {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card p {
+  color: #666;
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.feature-image {
+  width: 100%;
+  height: auto;
+  margin-top: 1.5rem;
+  border-radius: var(--border-radius);
+}
+
+/* How It Works Section */
+.how-it-works {
+  padding: 4rem 0;
+  background-color: var(--light-accent);
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.step {
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  text-align: center;
+  position: relative;
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto 1rem;
+}
+
+.step h3 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+/* Testimonials Section */
+.testimonials {
+  padding: 4rem 0;
+  position: relative;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.testimonial-card {
+  background-color: var(--card-background);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-title {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.testimonial-text {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.testimonial-author {
+  font-weight: 500;
+  text-align: right;
+}
+
+/* Rating stars */
+.rating {
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Demo Video Section */
+.demo-video {
+  padding: 4rem 0;
+  text-align: center;
+  background-color: var(--light-accent);
+  border-radius: var(--border-radius);
+  margin: 2rem 0;
+}
+
+.video-container {
+  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.video-container iframe {
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  border: none;
+}
+
+/* FAQ Section */
+.faq {
+  padding: 4rem 0;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 2rem auto 0;
+}
+
+.faq-item {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1.5rem;
+}
+
+.faq-question {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-answer {
+  color: #555;
+}
+
+/* CTA Section */
+.cta {
+  padding: 4rem 0;
+  text-align: center;
+  background: linear-gradient(135deg, #3a7b54 0%, #4e9968 100%);
+  color: white;
+  border-radius: var(--border-radius);
+  margin: 2rem 0;
+}
+
+.cta h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.cta p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  opacity: 0.9;
+}
+
+.cta .download-buttons {
+  justify-content: center;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 3rem 0 1.5rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  color: #ddd;
+}
+
+.footer-links a:hover {
+  color: var(--secondary-color);
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid #444;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* Mobile Menu for Responsive Design */
+@media (max-width: 768px) {
+  .header-container {
+    flex-wrap: wrap;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  nav {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  nav.active {
+    max-height: 300px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+
+  nav ul li {
+    margin: 0 0 0.8rem 0;
+  }
+
+  .hero .container {
+    flex-direction: column;
+  }
+
+  .hero-content,
+  .hero-image {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .hero-content {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .hero-image img {
+    max-height: none;
+  }
+
+  .benefits-list li {
+    justify-content: center;
+  }
+
+  .download-buttons {
+    justify-content: center;
+  }
+  
+  .download-button {
+    width: 135px; /* Slightly smaller on mobile */
+    height: 40px;
+  }
+
+  .android{
+    height: 60px;
+    width: 180px;
+    margin-top: -10px;
+  }
+
+  .video-container iframe {
+    height: 300px;
+  }
+  
+  /* Horizontal scrolling for testimonials on mobile */
+  .testimonials .container {
+    padding: 0; /* Remove container padding for testimonials */
+  }
+  
+  .testimonial-grid {
+    display: flex;
+    grid-template-columns: unset;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 0; /* Remove gap between cards */
+    padding-bottom: 1.5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    margin: 2rem 0 0 0; /* Adjust margin */
+  }
+  
+  .testimonial-grid::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+  }
+  
+  .testimonial-card {
+    width: 100%; /* Full width of the viewport */
+    min-width: 100%; /* Ensure it takes up full width */
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    margin: 0; /* Remove margin */
+    border-radius: 0; /* Remove border radius for edge-to-edge look */
+  }
+  
+  /* Add visual indicator for scrolling */
+  .testimonials::after {
+    content: "";
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 4px;
+    background-color: var(--secondary-color);
+    border-radius: 4px;
+    opacity: 0.5;
+  }
+  
+  .testimonial-title {
+    font-size: 1.1rem; /* Slightly smaller title */
+  }
+  
+  .testimonial-text {
+    font-size: 0.95rem; /* Slightly smaller text */
+  }
+}
+
+/* Add iPad and iPad Mini specific breakpoint */
+@media (min-width: 481px) and (max-width: 900px) {
+  .hero .container {
+    flex-direction: column;
+  }
+
+  .hero-content,
+  .hero-image {
+    max-width: 100%;
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .hero-content {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .hero-image {
+    margin-bottom: 1rem;
+  }
+
+  .feature-card {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .feature-image {
+    max-width: 70%;
+  }
+
+  .hero-image img {
+    max-width: 65%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    padding: 1rem;
+  }
+
+  .download-buttons {
+    flex-direction: row; /* Keep buttons side by side even on small screens */
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; /* Reduce gap on very small screens */
+  }
+  
+  .download-button {
+    width: 130px; /* Even smaller on tiny screens */
+    height: 38px;
+  }
+
+  .android{
+    height: 60px;
+    width: 150px;
+    margin-top: 0px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .video-container iframe {
+    height: 240px;
+  }
+}
+
+/* Animation Classes */
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Floating Download Button */
+.floating-download {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.floating-download:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-3px);
+}
+
+.floating-download span {
+  margin-right: 8px;
+}
