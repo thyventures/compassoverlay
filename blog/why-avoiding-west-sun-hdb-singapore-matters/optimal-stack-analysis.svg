@@ -1,0 +1,60 @@
+<!-- Placeholder image for optimal-stack-analysis.jpg -->
+<!-- This is a placeholder. You'll need to replace this with an actual image file. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#f5f5f5" />
+  
+  <!-- Site plan background -->
+  <rect x="50" y="100" width="700" height="400" fill="#fff" stroke="#ddd" stroke-width="2" />
+  
+  <!-- Building blocks -->
+  <rect x="100" y="150" width="120" height="80" fill="#d0d0d0" stroke="#888" stroke-width="1" />
+  <text x="160" y="190" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Block 123A</text>
+  
+  <rect x="300" y="150" width="120" height="80" fill="#d0d0d0" stroke="#888" stroke-width="1" />
+  <text x="360" y="190" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Block 123B</text>
+  
+  <rect x="500" y="150" width="120" height="80" fill="#d0d0d0" stroke="#888" stroke-width="1" />
+  <text x="560" y="190" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Block 123C</text>
+  
+  <rect x="100" y="350" width="120" height="80" fill="#d0d0d0" stroke="#888" stroke-width="1" />
+  <text x="160" y="390" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Block 124A</text>
+  
+  <rect x="300" y="350" width="120" height="80" fill="#d0d0d0" stroke="#888" stroke-width="1" />
+  <text x="360" y="390" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Block 124B</text>
+  
+  <!-- Highlighted optimal block -->
+  <rect x="500" y="350" width="120" height="80" fill="rgba(46,204,113,0.3)" stroke="#27ae60" stroke-width="2" />
+  <text x="560" y="390" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Block 124C</text>
+  
+  <!-- Shadow projections -->
+  <path d="M 620 350 L 680 320 L 680 400 L 620 430 Z" fill="rgba(0,0,0,0.1)" />
+  <path d="M 500 350 L 440 320 L 440 400 L 500 430 Z" fill="rgba(0,0,0,0.1)" />
+  
+  <!-- Compass -->
+  <circle cx="700" cy="130" r="30" fill="white" stroke="#3498db" stroke-width="1" />
+  <line x1="700" y1="100" x2="700" y2="160" stroke="#3498db" stroke-width="1" />
+  <line x1="670" y1="130" x2="730" y2="130" stroke="#3498db" stroke-width="1" />
+  <text x="700" y="95" font-family="Arial" font-size="12" text-anchor="middle" fill="#3498db">N</text>
+  <text x="700" y="170" font-family="Arial" font-size="12" text-anchor="middle" fill="#3498db">S</text>
+  <text x="740" y="130" font-family="Arial" font-size="12" text-anchor="middle" fill="#3498db">E</text>
+  <text x="660" y="130" font-family="Arial" font-size="12" text-anchor="middle" fill="#3498db">W</text>
+  
+  <!-- Sun paths -->
+  <line x1="560" y1="390" x2="700" y2="390" stroke="#e74c3c" stroke-width="2" stroke-dasharray="5,3" />
+  <text x="710" y="390" font-family="Arial" font-size="12" fill="#e74c3c">3-6PM sun blocked</text>
+  
+  <line x1="560" y1="350" x2="650" y2="280" stroke="#f39c12" stroke-width="2" stroke-dasharray="5,3" />
+  <text x="660" y="280" font-family="Arial" font-size="12" fill="#f39c12">Morning sun</text>
+  
+  <!-- Highlight optimal stack -->
+  <circle cx="535" y="365" r="15" fill="rgba(46,204,113,0.7)" stroke="#27ae60" stroke-width="2" />
+  <text x="535" y="369" font-family="Arial" font-size="12" text-anchor="middle" fill="white">#01</text>
+  <line x1="535" y1="365" x2="600" y2="320" stroke="#27ae60" stroke-width="2" />
+  <rect x="580" y="290" width="150" height="35" rx="5" fill="white" stroke="#27ae60" stroke-width="1" />
+  <text x="655" y="315" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">Optimal Stack: #01-53</text>
+  
+  <!-- Title and explanation -->
+  <text x="400" y="60" font-family="Arial" font-size="24" text-anchor="middle" fill="#333">BTO Site Plan Analysis</text>
+  <text x="400" y="530" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">Block 124C Stack #01: Protected from western sun by Block 123C</text>
+  <text x="400" y="560" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">Receives beneficial morning sun in living areas</text>
+</svg>

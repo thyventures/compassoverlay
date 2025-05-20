@@ -1,0 +1,10 @@
+<!-- Placeholder image for featured-image.jpg -->
+<!-- This is a placeholder. You'll need to replace this with an actual image file. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#3498db" />
+  <rect x="0" y="315" width="600" height="315" fill="#e74c3c" />
+  <rect x="600" y="315" width="600" height="315" fill="#2ecc71" />
+  <text x="600" y="200" font-family="Arial" font-size="60" text-anchor="middle" fill="white">West Sun vs. East Sun</text>
+  <text x="300" y="480" font-family="Arial" font-size="40" text-anchor="middle" fill="white">Hot West-Facing Wall (32°C)</text>
+  <text x="900" y="480" font-family="Arial" font-size="40" text-anchor="middle" fill="white">Cool East-Facing Wall (26°C)</text>
+</svg>

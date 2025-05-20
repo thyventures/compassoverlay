@@ -4,25 +4,59 @@
 
 ### Navigation and Homepage Updates
 - [x] Create `/blog` directory for blog content
-- [ ] Add "Blog" link to main navigation in `index.html`
-- [ ] Create a blog section teaser on the homepage showcasing latest articles
-- [ ] Update footer links to include blog section
+- [x] Add "Blog" link to main navigation in `index.html`
+- [x] Create a blog section teaser on the homepage showcasing latest articles
+- [x] Update footer links to include blog section
 
 ### Blog Structure Setup
-- [ ] Create `blog/index.html` as the main blog listing page
-- [ ] Create directory for each blog post (e.g., `/blog/why-avoiding-west-sun-hdb-singapore-matters/`)
-- [ ] Develop blog post template with consistent styling
-- [ ] Implement blog post navigation (previous/next post)
+- [x] Create `blog/index.html` as the main blog listing page
+- [x] Create directory for each blog post (e.g., `/blog/why-avoiding-west-sun-hdb-singapore-matters/`)
+- [x] Develop standard blog post template (blog-template.html) with:
+  - [x] Consistent header and footer
+  - [x] Article structure with proper heading hierarchy
+  - [x] Author byline and publication date
+  - [x] Social sharing buttons
+  - [x] Related posts section
+  - [x] Call-to-action for app download
+- [x] Create CSS styles for blog content in `blog-styles.css`
+  - [x] Typography styles optimized for readability
+  - [x] Image styling with responsive design
+  - [x] Code for featured images and captions
+  - [x] Table of contents styling
+- [x] Implement breadcrumb navigation
+- [ ] Create blog category pages for topic organization
+- [ ] Set up blog post pagination and previous/next navigation
 
 ## 2. Content Creation
 
 ### Priority Content
-- [ ] Write comprehensive guide: "Why Avoiding West Sun in Singapore HDB Units Matters"
-- [ ] Create assets for this post:
-  - [ ] Sun path diagrams for Singapore
-  - [ ] Temperature comparison charts
-  - [ ] Energy consumption infographics
-  - [ ] Screenshots of Compass Overlay app usage
+- [x] Write comprehensive guide: "Why Avoiding West Sun in Singapore HDB Units Matters"
+  - **Structure & Key Points:**
+    - **Introduction**: Establish the unique challenge of west-facing units in Singapore's equatorial climate
+    - **The Problem (with Real Examples):**
+      - Concrete walls as heat banks: How they store and emit heat until midnight
+      - Case study: $200 vs $100 monthly utility bills (west-facing vs optimal orientation)
+      - Impact on comfort, sleep quality, and long-term livability
+      - The "renovation regret" when homeowners sell prematurely due to heat issues
+    - **The Science Behind It:**
+      - Singapore's sun path variation (up to 48° throughout the year)
+      - Thermal mass principles and how concrete stores heat
+      - Comparison of morning vs afternoon sun intensity
+    - **Solutions for BTO Buyers:**
+      - Using Compass Overlay to analyze site plans before selection
+      - Identifying optimal stack numbers in popular projects
+      - Success story: How precise sun direction analysis helped select the perfect unit
+    - **Call to Action:**
+      - App download with step-by-step instructions
+      - Professional analysis service offer ($50 consultation)
+      - Free resources for current BTO launches
+
+- [x] Create compelling visual assets:
+  - [x] Animated sun path diagram showing seasonal variations
+  - [x] Infographic: "The True Cost of West Sun" (energy bills comparison)
+  - [x] Before/after thermal imaging of west-facing walls
+  - [x] Step-by-step app usage guide with project site plan examples
+  - [x] Downloadable decision-making checklist for BTO buyers
   
 ### BTO Project Content
 - [ ] Research detailed information for each BTO project:
