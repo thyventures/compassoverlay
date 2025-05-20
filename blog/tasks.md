@@ -24,8 +24,6 @@
   - [x] Code for featured images and captions
   - [x] Table of contents styling
 - [x] Implement breadcrumb navigation
-- [ ] Create blog category pages for topic organization
-- [ ] Set up blog post pagination and previous/next navigation
 
 ## 2. Content Creation
 
