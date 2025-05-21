@@ -1,13 +1,15 @@
 // main.js
 document.addEventListener('DOMContentLoaded', function() {
-  const imageSources = ["./compass-demo.png", "./suncompass-demo.png", "./demo.png"];
+  const imageSources = ["/compass-demo.png", "/suncompass-demo.png", "/demo.png"];
   let index = 0;
   
   // Image rotation
   setInterval(() => {
     const imageElement = document.getElementById("app-preview");
-    index = (index + 1) % imageSources.length;
-    imageElement.src = imageSources[index];
+    if (imageElement) {
+      index = (index + 1) % imageSources.length;
+      imageElement.src = imageSources[index];
+    }
   }, 5000);
   
   // Mobile menu toggle

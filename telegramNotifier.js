@@ -205,6 +205,23 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
+ * Gets all ancestor elements of an element
+ * @param {Element} element - The element to get ancestors for
+ * @returns {Array} Array of ancestor elements
+ */
+const getAncestors = (element) => {
+  const ancestors = [];
+  let current = element;
+  
+  while (current && current !== document) {
+    ancestors.push(current);
+    current = current.parentElement;
+  }
+  
+  return ancestors;
+};
+
+/**
  * Sets up tracking for all download buttons
  */
 const setupDownloadTracking = () => {
@@ -223,11 +240,12 @@ const setupDownloadTracking = () => {
     
     // Determine location
     let location = 'unknown';
-    if (button.closest('.hero')) {
+    const ancestors = getAncestors(button);
+    if (ancestors.some(el => el.classList && el.classList.contains('hero'))) {
       location = 'hero';
-    } else if (button.closest('.cta')) {
+    } else if (ancestors.some(el => el.classList && el.classList.contains('cta'))) {
       location = 'footer';
-    } else if (button.closest('.post-cta')) {
+    } else if (ancestors.some(el => el.classList && el.classList.contains('post-cta'))) {
       location = 'blog_post';
     }
     
