@@ -15,35 +15,42 @@ const FIREBASE_FUNCTION_URL = 'https://asia-southeast1-livebandtoday.cloudfuncti
  * @returns Object containing user and session data
  */
 const gatherUserInfo = () => {
-  // Get referrer information
-  const referrer = document.referrer || 'direct';
-  const referrerDomain = referrer !== 'direct' ? new URL(referrer).hostname : 'direct';
-  
-  // Get user agent information for device detection
-  const userAgent = navigator.userAgent;
-  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
-  const isTablet = /iPad|Android(?!.*Mobile)/i.test(userAgent);
-  
-  // Determine device type
-  let deviceType = 'desktop';
-  if (isMobile) deviceType = 'mobile';
-  if (isTablet) deviceType = 'tablet';
-  
-  // Get screen dimensions
-  const screenWidth = window.screen.width;
-  const screenHeight = window.screen.height;
-  
-  return {
-    // Referral information
-    referrer: referrerDomain,
-    isDirectVisit: referrer === 'direct',
+  try {
+    // Get referrer information
+    const referrer = document.referrer || 'direct';
+    const referrerDomain = referrer !== 'direct' ? new URL(referrer).hostname : 'direct';
     
-    // Device information
-    deviceType,
+    // Get user agent information for device detection
+    const userAgent = navigator.userAgent;
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+    const isTablet = /iPad|Android(?!.*Mobile)/i.test(userAgent);
     
-    // Screen info
-    screenSize: `${screenWidth}x${screenHeight}`
-  };
+    // Determine device type
+    let deviceType = 'desktop';
+    if (isMobile) deviceType = 'mobile';
+    if (isTablet) deviceType = 'tablet';
+    
+    // Get screen dimensions
+    const screenWidth = window.screen.width;
+    const screenHeight = window.screen.height;
+    
+    return {
+      // Referral information
+      referrer: referrerDomain,
+      isDirectVisit: referrer === 'direct',
+      
+      // Device information
+      deviceType,
+      
+      // Screen info
+      screenSize: `${screenWidth}x${screenHeight}`
+    };
+  } catch (error) {
+    // Fail silently with minimal info
+    return {
+      error: "Could not gather user info"
+    };
+  }
 };
 
 /**
@@ -73,6 +80,11 @@ const notifyEvent = async (
   eventName, 
   eventParams = {}
 ) => {
+  // Silent fail if we're not in browser environment
+  if (typeof window === 'undefined' || !navigator) {
+    return;
+  }
+
   const now = Date.now();
   const lastTime = lastEventTime[eventName] || 0;
   
@@ -84,42 +96,51 @@ const notifyEvent = async (
   // Update the last event time
   lastEventTime[eventName] = now;
   
+  // Create a simplified event object to start with
+  let eventObject = {
+    eventName,
+    eventTime: new Date().toISOString(),
+    eventParams,
+    userInfo: null,
+    geoInfo: null
+  };
+  
   try {
-    // Gather focused user information
-    const userInfo = gatherUserInfo();
+    // Try to add enriched data, but continue even if it fails
+    try {
+      eventObject.userInfo = gatherUserInfo();
+    } catch (e) {
+      // Silent fail - the basic event will still be sent
+    }
     
-    // Try to get geolocation data (will be null if failed)
-    const geoInfo = await getGeolocation();
+    // Try to get geolocation, but continue even if it fails
+    try {
+      eventObject.geoInfo = await getGeolocation();
+    } catch (e) {
+      // Silent fail - the basic event will still be sent
+    }
     
-    // Create an enhanced event object
-    const enhancedEvent = {
-      eventName,
-      eventTime: new Date().toISOString(),
-      eventParams,
-      userInfo,
-      geoInfo
-    };
-    
-    // Call the Cloud Function
+    // Call the Firebase function directly via HTTP
     try {
       const response = await fetch(FIREBASE_FUNCTION_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Origin': window.location.origin
         },
-        body: JSON.stringify({
-          data: enhancedEvent
-        })
+        body: JSON.stringify(eventObject)
       });
       
+      // If there's an error, log it but don't show to user
       if (!response.ok) {
-        console.error('Error calling Firebase function:', await response.text());
+        console.warn('Telegram notification failed (non-critical)');
       }
     } catch (fnError) {
-      console.error('Error calling Firebase function:', fnError);
+      // Silent fail - this is a non-critical feature
+      console.warn('Failed to send analytics (non-critical)');
     }
   } catch (error) {
-    console.error('Error sending enhanced Telegram notification:', error);
+    // Silent fail for all errors - this should never block the user experience
   }
 };
 
@@ -128,14 +149,17 @@ const notifyEvent = async (
  * @param {string} pageName - Name of the page being viewed
  */
 const trackPageView = (pageName) => {
+  // Silent fail if we're not in browser environment
+  if (typeof window === 'undefined') return;
+  
   const eventParams = {
-    page_title: pageName,
+    page_title: pageName || document.title,
     page_location: window.location.href,
     page_path: window.location.pathname
   };
   
   // Notify Telegram with the full path
-  notifyEvent('Page View', { page: pageName });
+  notifyEvent('Page View', eventParams);
 };
 
 // Export the functions
@@ -146,6 +170,9 @@ window.compassTelegramNotifier = {
 
 // Track the current page view on load
 document.addEventListener('DOMContentLoaded', () => {
+  // Silent fail if we're not in browser environment
+  if (typeof window === 'undefined') return;
+  
   // Get page title
   const pageTitle = document.title;
   
