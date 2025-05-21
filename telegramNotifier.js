@@ -162,10 +162,31 @@ const trackPageView = (pageName) => {
   notifyEvent('Page View', eventParams);
 };
 
+/**
+ * Tracks download button clicks
+ * @param {string} platform - The platform (iOS/Android)
+ * @param {string} location - Where the button was clicked (hero, footer, etc.)
+ */
+const trackDownloadClick = (platform, location) => {
+  // Silent fail if we're not in browser environment
+  if (typeof window === 'undefined') return;
+  
+  const eventParams = {
+    platform: platform,
+    location: location,
+    page: window.location.pathname,
+    timestamp: new Date().toISOString()
+  };
+  
+  // Notify Telegram of the download click
+  notifyEvent('Download Click', eventParams);
+};
+
 // Export the functions
 window.compassTelegramNotifier = {
   notifyEvent,
-  trackPageView
+  trackPageView,
+  trackDownloadClick
 };
 
 // Track the current page view on load
