@@ -199,4 +199,50 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Track the page view
   trackPageView(pageTitle);
+  
+  // Add click handlers to all download buttons
+  setupDownloadTracking();
 });
+
+/**
+ * Sets up tracking for all download buttons
+ */
+const setupDownloadTracking = () => {
+  // Find all download buttons
+  const downloadButtons = document.querySelectorAll('.download-button');
+  
+  // Attach click handlers
+  downloadButtons.forEach(button => {
+    const href = button.getAttribute('href') || '';
+    let platform = 'unknown';
+    if (href.includes('apple.com') || href.includes('app-store')) {
+      platform = 'iOS';
+    } else if (href.includes('play.google.com') || href.includes('play-store')) {
+      platform = 'Android';
+    }
+    
+    // Determine location
+    let location = 'unknown';
+    if (button.closest('.hero')) {
+      location = 'hero';
+    } else if (button.closest('.cta')) {
+      location = 'footer';
+    } else if (button.closest('.post-cta')) {
+      location = 'blog_post';
+    }
+    
+    // Replace the inline onClick with proper event listener
+    const existingOnClick = button.getAttribute('onclick');
+    button.removeAttribute('onclick');
+    
+    button.addEventListener('click', (event) => {
+      // Track the download click
+      trackDownloadClick(platform, location);
+      
+      // If there was an existing onclick function call (like gtag_report_conversion)
+      if (existingOnClick && existingOnClick.includes('gtag_report_conversion')) {
+        gtag_report_conversion();
+      }
+    });
+  });
+};
