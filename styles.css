@@ -59,7 +59,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0;
+  padding: 0.8rem 0;
 }
 
 .logo {
@@ -73,7 +73,7 @@ header {
 }
 
 .logo h1 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: var(--primary-color);
   margin: 0;
 }
