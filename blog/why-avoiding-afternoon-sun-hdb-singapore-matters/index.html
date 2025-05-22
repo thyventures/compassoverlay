@@ -62,6 +62,106 @@
           margin-bottom: 1.5rem;
         }
       }
+      
+      /* BTO Analysis Form Styles */
+      .bto-analysis-form {
+        background: #f8f9fa;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 2rem;
+        margin: 2rem 0;
+      }
+      
+      .bto-analysis-form h4 {
+        color: #2c3e50;
+        margin-bottom: 1.5rem;
+        font-size: 1.25rem;
+      }
+      
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+      
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: #333;
+      }
+      
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+      }
+      
+      .form-group input:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+      }
+      
+      .form-group small {
+        display: block;
+        margin-top: 0.25rem;
+        color: #666;
+        font-size: 0.875rem;
+      }
+      
+      .form-submit-btn {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      
+      .form-submit-btn:hover {
+        background: #0056b3;
+      }
+      
+      .form-submit-btn:disabled {
+        background: #6c757d;
+        cursor: not-allowed;
+      }
+      
+      .process-info {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid #e0e0e0;
+      }
+      
+      .process-info h4 {
+        color: #2c3e50;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+      }
+      
+      .process-info ol {
+        margin: 0;
+        padding-left: 1.5rem;
+      }
+      
+      .process-info li {
+        margin-bottom: 0.75rem;
+        line-height: 1.5;
+      }
+      
+      @media (max-width: 768px) {
+        .bto-analysis-form {
+          padding: 1.5rem;
+          margin: 1.5rem 0;
+        }
+      }
     </style>
 
     <!-- Google tag (gtag.js) -->
@@ -222,7 +322,51 @@
             </ul>
       
             <h3 id="option-2">Option 2: Let Us Help</h3>
-            <p>Short on time? For just <strong>$50</strong>, we’ll analyse 5 units of your choice to show you their year-round sun exposure. A simple analysis now can save you thousands and keep your home comfortable for years. <a href="mailto:support@compassoverlay.com?subject=BTO%20Sun%20Direction%20Analysis%20Request">Email us</a> to get started.</p>
+            <p>Short on time? For just <strong>$50</strong>, we’ll analyse 5 units of your choice to show you their year-round sun exposure. A simple analysis now can save you thousands and keep your home comfortable for years. </p>
+            
+            <div class="bto-analysis-form">
+              <h4>Get Your BTO Sun Analysis</h4>
+              <form id="btoAnalysisForm">
+                <div class="form-group">
+                  <label for="name">Name *</label>
+                  <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="email">Email *</label>
+                  <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="phone">Phone *</label>
+                  <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="projectName">BTO Project Name *</label>
+                  <input type="text" id="projectName" name="projectName" placeholder="e.g. Tengah Garden Walk" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="units">5 Blocks and Unit Stacks *</label>
+                  <textarea id="units" name="units" rows="4" placeholder="e.g. Block 968A unit 163 and unit 161, Block 968B unit 179, unit 177 and 181" required></textarea>
+                  <small>Please specify the blocks and unit stacks you'd like us to analyze</small>
+                  <small><strong>Example:</strong> Block 968A unit 163 and unit 161, Block 968B unit 179, unit 177 and 181</small>
+                </div>
+                
+                <button type="submit" class="form-submit-btn">Request Analysis - $50</button>
+              </form>
+              
+              <div class="process-info">
+                <h4>What happens next?</h4>
+                <ol>
+                  <li>We'll reach out to you within 24 hours for confirmation and payment</li>
+                  <li>Once payment is received, we'll send you the comprehensive report within 3 business days</li>
+                  <li>For each unit, you'll get 2 photos showing sun exposure in December and June (when sun angles are most extreme)</li>
+                  <li>We'll rank all 5 units from least to most sun exposure throughout the year</li>
+                </ol>
+              </div>
+            </div>
       
             <h2 id="faq">FAQ</h2>
             <h3>How can I tell if a unit gets afternoon sun?</h3>
@@ -238,7 +382,7 @@
             <p>It gives a year-round sun exposure overview, not just one moment in time. This helps you choose a cooler home before buying.</p>
           </div>
       
-          <div class="post-cta">
+          <div class="post-cta" id="post-cta" >
             <h2>Make Smarter Property Choices</h2>
             <p>Check sun exposure with our app. Avoid heat, save money.</p>
             <div class="download-buttons">
@@ -330,5 +474,70 @@
     <!-- External JavaScript -->
     <script src="../../main.js"></script>
     <script src="../../telegramNotifier.js"></script>
+    
+    <!-- BTO Analysis Form Handler -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('btoAnalysisForm');
+        
+        if (form) {
+          form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = form.querySelector('.form-submit-btn');
+            const originalText = submitBtn.textContent;
+            
+            // Disable button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+            
+            try {
+              // Collect form data
+              const formData = {
+                name: form.name.value,
+                email: form.email.value,
+                phone: form.phone.value,
+                projectName: form.projectName.value,
+                units: form.units.value
+              };
+              
+              // Try to send notification to Telegram
+              let notificationSent = false;
+              try {
+                if (window.compassTelegramNotifier && window.compassTelegramNotifier.notifyEvent) {
+                  await window.compassTelegramNotifier.notifyEvent('BTO_Analysis_Request', {
+                    formData: formData,
+                    timestamp: new Date().toISOString(),
+                    page: window.location.href
+                  });
+                  notificationSent = true;
+                }
+              } catch (telegramError) {
+                console.warn('Telegram notification failed:', telegramError);
+                // Continue with the process even if Telegram fails
+              }
+              
+              // Show success message
+              if (notificationSent) {
+                alert('Thank you! We\'ve received your request and will reach out to you within 24 hours for confirmation and payment.');
+              } else {
+                alert('Thank you for your request! We\'ve noted your details. Due to a technical issue, please also send us an email at support@compassoverlay.com with your request details to ensure we receive it.');
+              }
+              
+              // Reset form
+              form.reset();
+              
+            } catch (error) {
+              console.error('Error submitting form:', error);
+              alert('There was an issue submitting your request. Please email us directly at support@compassoverlay.com with your details:\n\nName: ' + form.name.value + '\nEmail: ' + form.email.value + '\nPhone: ' + form.phone.value + '\nProject: ' + form.projectName.value + '\nUnits: ' + form.units.value);
+            } finally {
+              // Re-enable button
+              submitBtn.disabled = false;
+              submitBtn.textContent = originalText;
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>
