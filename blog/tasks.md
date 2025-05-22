@@ -10,7 +10,7 @@
 
 ### Blog Structure Setup
 - [x] Create `blog/index.html` as the main blog listing page
-- [x] Create directory for each blog post (e.g., `/blog/why-avoiding-west-sun-hdb-singapore-matters/`)
+- [x] Create directory for each blog post (e.g., `/blog/why-avoid-afternoon-sun-in-singapore-hdb-units/`)
 - [x] Develop standard blog post template (blog-template.html) with:
   - [x] Consistent header and footer
   - [x] Article structure with proper heading hierarchy
