@@ -42,6 +42,17 @@
         margin-bottom: 1rem;
       }
       
+      /* Full-width case study images */
+      .case-study-images .sun-path-comparison {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .case-study-images .sun-path-image {
+        width: 100%;
+        margin-bottom: 2rem;
+      }
+      
       .sun-path-image img {
         width: 100%;
         height: auto;
@@ -73,7 +84,7 @@
       
       .unit-analysis-section {
         background-color: #f9f9f9;
-        padding: 2rem;
+        padding: 0rem 2rem;
         border-radius: 8px;
       }
 
@@ -123,6 +134,91 @@
         
         .unit-images-placeholder {
           flex-direction: column;
+        }
+        
+        .unit-tab {
+          padding: 0.75rem 0.5rem;
+          font-size: 0.9rem;
+        }
+      }
+      
+      /* Tab Structure Styles */
+      .unit-tabs-container {
+        margin-top: 1.5rem;
+      }
+      
+      .unit-tabs {
+        display: flex;
+        border-bottom: 2px solid #e0e0e0;
+        margin-bottom: 1.5rem;
+        gap: 0;
+      }
+      
+      .unit-tab {
+        background: #f8f9fa;
+        border: 1px solid #e0e0e0;
+        border-bottom: none;
+        padding: 1rem 1.5rem;
+        cursor: pointer;
+        font-weight: 600;
+        color: #666;
+        transition: all 0.3s ease;
+        flex: 1;
+        text-align: center;
+      }
+      
+      .unit-tab:first-child {
+        border-radius: 8px 0 0 0;
+      }
+      
+      .unit-tab:last-child {
+        border-radius: 0 8px 0 0;
+      }
+      
+      .unit-tab:hover {
+        background: #e9ecef;
+        color: #333;
+      }
+      
+      .unit-tab.active {
+        background: #d1ecf1;
+        color: #0c5460;
+        border-color: #bee5eb;
+        position: relative;
+      }
+      
+      .unit-tab.active::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: #bee5eb;
+      }
+      
+      .unit-tab-content {
+        position: relative;
+        min-height: 200px;
+      }
+      
+      .tab-panel {
+        display: none;
+        animation: fadeIn 0.3s ease-in-out;
+      }
+      
+      .tab-panel.active {
+        display: block;
+      }
+      
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
       }
       
@@ -403,91 +499,94 @@
               <li>Walls that stay warm well into the night</li>
               <li>Higher air conditioning costs (up to 50% more)</li>
               <li>Uncomfortable living conditions, especially in bedrooms</li>
-              <li>Increased wear and tear on cooling appliances</li>
+              <li>Increased wear and tear of air conditioner</li>
             </ul>
       
             <p>The difference in electricity bills between a sun-exposed unit and a shaded one can be substantial - potentially <strong>$100+ per month</strong> or <strong>$6,000+ over 5 years</strong>.</p>
-      
+
+            <h3>Case Study: Good vs Bad Sun Exposure</h3>
+            <p>To illustrate the dramatic difference sun exposure can make, here's a comparison of two neighboring units in the same development. From an inexperienced person's view, these units with similar layout might seem identical and choosing either might be okay, but without consideration of sun direction, the prospective owner might have to spend significantly more money just to cool their unit and feel significantly more uncomfortable in their home.</p>
+
+            <div class="case-study-images">
+              <div class="sun-path-comparison">
+                <div class="sun-path-image">
+                  <img src="../images/good-dec.JPG" alt="Good Unit - December Sun Direction" />
+                  <p class="image-caption"><strong>Good Unit - December</strong><br>Morning sun blocked by neighboring unit and corridor</p>
+                </div>
+                <div class="sun-path-image">
+                  <img src="../images/good-jun.JPG" alt="Good Unit - June Sun Direction" />
+                  <p class="image-caption"><strong>Good Unit - June</strong><br>Afternoon sun completely blocked year-round</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-box">
+              <p><strong>Why the Good Unit Works:</strong></p>
+              <p>The afternoon sun is totally blocked by the neighboring unit and common corridor. It also gets morning sun during some times of the year, so sleeping in isn't an issue while ensuring that the bedroom and living room get the comfortable morning sun that can remove humidity from the rooms.</p>
+            </div>
+
+            <div class="case-study-images">
+              <div class="sun-path-comparison">
+                <div class="sun-path-image">
+                  <img src="../images/bad-dec.JPG" alt="Bad Unit - December Sun Direction" />
+                  <p class="image-caption"><strong>Bad Unit - December</strong><br>Direct afternoon sun hits master bedroom wall</p>
+                </div>
+                <div class="sun-path-image">
+                  <img src="../images/bad-jun.JPG" alt="Bad Unit - June Sun Direction" />
+                  <p class="image-caption"><strong>Bad Unit - June</strong><br>Year-round afternoon sun exposure</p>
+                </div>
+              </div>
+            </div>
+
             <div class="warning-box">
-              <p><strong>Learn more:</strong> For a detailed explanation of why this matters, read our comprehensive guide on <a href="../why-avoid-afternoon-sun-in-singapore-hdb-units/">why avoiding afternoon sun in Singapore HDB units matters</a>.</p>
+              <p><strong>Why the Bad Unit is Problematic:</strong></p>
+              <p>This unit gets direct afternoon sun all year round in the master bedroom wall. The wall absorbs heat and slowly releases it even after the sun sets, making the room uncomfortably warm well into the night. While the service yard benefits from direct afternoon sun for drying clothes, and the other 2 bedrooms stay comfortable without afternoon sun, the master bedroom becomes a major comfort and cost issue.</p>
             </div>
       
-            <h2 id="available-room-types">Available Room Types in Chencharu Green</h2>
-            <p>Chencharu Green offers three types of flats to cater to different family needs:</p>
-            <ul>
-              <li><strong>2-room Flexi:</strong> Compact units perfect for singles or young couples</li>
-              <li><strong>4-room:</strong> Standard family units with good space distribution</li>
-              <li><strong>5-room:</strong> Larger units ideal for bigger families</li>
-            </ul>
+            <div class="info-box">
+              <p><strong>Learn more:</strong> Read our comprehensive guide on <a href="../why-avoid-afternoon-sun-in-singapore-hdb-units/">why avoiding afternoon sun in Singapore HDB units matters</a>.</p>
+            </div>
       
-            <h2 id="site-map">Chencharu Green Site Map with Best Units</h2>
+            <h2 id="site-map">Chencharu Green Best Units That Avoid Afternoon Sun</h2>
             <div class="site-map-section">
             <img src="siteplan.png" alt="Chencharu Green Site Plan with Best Units Highlighted" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); margin-bottom: 1rem;" />
-            <p class="image-caption">Site plan showing the best units of each room type that effectively avoid afternoon sun exposure</p>
             </div>
       
-            <p>In the site map above, you can see the highlighted best units of each room type that effectively avoid afternoon sun throughout the year. Read on to understand why each of these units represents the optimal choice for comfortable, energy-efficient living.</p>
-      
-            <h2 class="best-unit-header" id="best-2-room-units">Best 2-Room Flexi Units Analysis</h2>
-            <div class="unit-analysis-section">
-              <h3>Top 2-Room Unit: Block 967A #109</h3>
-              
-              <div class="unit-images-placeholder">
-                <div class="unit-image-container">
-                  <img src="2RM-967A-109-DEC.JPG" alt="2-Room Unit 967A #109 December Sun Direction" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
-                  <p class="image-caption"><br><strong>December Sun Direction</strong></p>
-                </div>
-                <div class="unit-image-container">
-                  <img src="2RM-967A-109-JUN.JPG" alt="2-Room Unit 967A #109 June Sun Direction" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
-                  <p class="image-caption"><br><strong>June Sun Direction</strong></p>
-                </div>
+            <!-- Tab Structure for Unit Analysis -->
+            <div class="unit-tabs-container">
+              <div class="unit-tabs">
+                <button class="unit-tab active" data-tab="2-room">2 Rm</button>
+                <button class="unit-tab" data-tab="4-room">4 Rm</button>
+                <button class="unit-tab" data-tab="5-room">5 Rm</button>
               </div>
               
-              <div class="info-box">
-                <p><strong>Why This Unit is the Best Choice:</strong></p>
-                <p>Unit 111 blocks out all the afternoon sun for you so your house would not suffer from afternoon heat all the way to the night. However, this may not be true for people selecting the top few floors of this stack as the sun can still hit the bedroom in the later part of the afternoon.</p>
-              </div>
-            </div>
-
-            <h2 class="best-unit-header" id="best-4-room-units">Best 4-Room Units Analysis</h2>
-            <div class="unit-analysis-section">
-              <h3>Top 4-Room Unit: Block 967A #123</h3>
-              
-              <div class="unit-images-placeholder">
-                <div class="unit-image-container">
-                  <img src="4RM-967A-123-DEC.jpg" alt="4-Room Unit 967A #123 December Sun Direction" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
-                  <p class="image-caption"><br><strong>December Sun Direction</strong></p>
+              <div class="unit-tab-content">
+                <div class="tab-panel active" id="2-room-panel">
+                  <div class="unit-analysis-section">
+                    <h3>Best 2 room unit: Block 967A stack #109</h3>
+                    <div class="info-box">
+                      <p>Unit #111 blocks out all the afternoon sun for you so your house would not suffer from afternoon heat all the way to the night. However, this may not be true for people selecting the top few floors of this stack as the sun can still hit the bedroom in the later part of the afternoon.</p>
+                    </div>
+                  </div>
                 </div>
-                <div class="unit-image-container">
-                  <img src="4RM-967A-123-JUN.jpg" alt="4-Room Unit 967A #123 June Sun Direction" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
-                  <p class="image-caption"><br><strong>June Sun Direction</strong></p>
+                
+                <div class="tab-panel" id="4-room-panel">
+                  <div class="unit-analysis-section">
+                    <h3>Best 4 room unit: Block 967A stack #123</h3>
+                    <div class="info-box">
+                      <p>This is one of the most shaded units in the whole estate as the afternoon sun is completely blocked by the common corridor.</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              
-              <div class="info-box">
-                <p><strong>Why This Unit is the Best Choice:</strong></p>
-                <p>This is one of the most shaded units in the whole estate as the afternoon sun is completely blocked by the common corridor.</p>
-              </div>
-            </div>
-
-            <h2 class="best-unit-header" id="best-5-room-units">Best 5-Room Units Analysis</h2>
-            <div class="unit-analysis-section">
-              <h3>Top 5-Room Unit: Block 968B #195</h3>
-              
-              <div class="unit-images-placeholder">
-                <div class="unit-image-container">
-                  <img src="5RM-968B-195-DEC.JPG" alt="5-Room Unit 968B #195 December Sun Direction" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
-                  <p class="image-caption"><br><strong>December Sun Direction</strong><br></p>
+                
+                <div class="tab-panel" id="5-room-panel">
+                  <div class="unit-analysis-section">
+                    <h3>Best 5 room unit: Block 968B stack #195</h3>
+                    <div class="info-box">
+                      <p>Like the best 4-room unit, this unit is mostly shaded by the common corridor and unit #197. However, note that in some days of December, some direct sunlight might hit a small portion of the bedroom beside the living room. This should still be tolerable as it's a small portion for just a few days in the year.</p>
+                    </div>
+                  </div>
                 </div>
-                <div class="unit-image-container">
-                  <img src="5RM-968B-195-JUNE.JPG" alt="5-Room Unit 968B #195 June Sun Direction" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
-                  <p class="image-caption"><br><strong>June Sun Direction</strong><br></p>
-                </div>
-              </div>
-              
-              <div class="info-box">
-                <p><strong>Why This Unit is the Best Choice:</strong></p>
-                <p>Like the best 4-room unit, this unit is mostly shaded by the common corridor and unit #197. However, note that in some days of December, some direct sunlight might hit a small portion of the bedroom beside the living room. This should still be tolerable as it's a small portion for just a few days in the year.</p>
               </div>
             </div>
       
@@ -656,6 +755,25 @@
     <!-- BTO Analysis Form Handler -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
+        // Tab functionality
+        const tabs = document.querySelectorAll('.unit-tab');
+        const panels = document.querySelectorAll('.tab-panel');
+        
+        tabs.forEach(tab => {
+          tab.addEventListener('click', function() {
+            const targetTab = this.getAttribute('data-tab');
+            
+            // Remove active class from all tabs and panels
+            tabs.forEach(t => t.classList.remove('active'));
+            panels.forEach(p => p.classList.remove('active'));
+            
+            // Add active class to clicked tab and corresponding panel
+            this.classList.add('active');
+            document.getElementById(targetTab + '-panel').classList.add('active');
+          });
+        });
+        
+        // Form handling
         const form = document.getElementById('btoAnalysisForm');
         
         if (form) {
