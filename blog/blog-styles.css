@@ -251,7 +251,6 @@ header {
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 2rem auto;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -712,11 +711,6 @@ header {
   .post-header {
     margin-bottom: 1.5rem;
     padding: 1.5rem;
-  }
-  
-  /* Improve image display on mobile */
-  .post-content img {
-    margin: 1.5rem auto;
   }
   
   /* Better mobile reading experience */
