@@ -48,4 +48,10 @@
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://www.compassoverlay.com/blog/how-to-use-the-sun-compass/</loc>
+    <lastmod>2025-06-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
 </urlset>
