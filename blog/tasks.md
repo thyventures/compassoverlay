@@ -46,7 +46,7 @@
       - Success story: How precise sun direction analysis helped select the perfect unit
     - **Call to Action:**
       - App download with step-by-step instructions
-      - Professional analysis service offer ($50 consultation)
+      - Professional analysis service offer ($29.90 consultation)
       - Free resources for current BTO launches
 
 - [x] Create compelling visual assets:
