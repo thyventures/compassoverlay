@@ -123,6 +123,99 @@
         margin-bottom: 0.5rem;
       }
       
+      /* Comparison Tab Structure Styles */
+      .comparison-tabs-container {
+        margin-top: 1.5rem;
+      }
+      
+      .comparison-tabs {
+        display: flex;
+        border-bottom: 2px solid #e0e0e0;
+        margin-bottom: 1.5rem;
+        gap: 0;
+      }
+      
+      .comparison-tab {
+        background: #f8f9fa;
+        border: 1px solid #e0e0e0;
+        border-bottom: none;
+        padding: 1rem 1.5rem;
+        cursor: pointer;
+        font-weight: 600;
+        color: #666;
+        transition: all 0.3s ease;
+        flex: 1;
+        text-align: center;
+      }
+      
+      .comparison-tab:first-child {
+        border-radius: 8px 0 0 0;
+      }
+      
+      .comparison-tab:last-child {
+        border-radius: 0 8px 0 0;
+      }
+      
+      .comparison-tab:hover {
+        background: #e9ecef;
+        color: #333;
+      }
+      
+      .comparison-tab.active {
+        background: #d1ecf1;
+        color: #0c5460;
+        border-color: #bee5eb;
+        position: relative;
+      }
+      
+      .comparison-tab.active::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: #bee5eb;
+      }
+      
+      .comparison-tab-content {
+        position: relative;
+        min-height: 200px;
+      }
+      
+      .comparison-panel {
+        display: none;
+        animation: fadeIn 0.3s ease-in-out;
+      }
+      
+      .comparison-panel.active {
+        display: block;
+      }
+      
+      /* Warning and info box styles */
+      .warning-box {
+        background-color: #fff3cd;
+        border: 1px solid #ffeaa7;
+        border-left: 5px solid #f39c12;
+        border-radius: 4px;
+        padding: 1rem;
+        margin: 1rem 0;
+      }
+      
+      .info-box {
+        background-color: #d1ecf1;
+        border: 1px solid #bee5eb;
+        border-left: 5px solid #17a2b8;
+        border-radius: 4px;
+        padding: 1rem;
+        margin: 1rem 0;
+      }
+      
+      .warning-box p:last-child,
+      .info-box p:last-child {
+        margin-bottom: 0;
+      }
+      
       @media (max-width: 768px) {
         .sun-path-image {
           width: 100%;
@@ -133,6 +226,11 @@
         }
         
         .unit-tab {
+          padding: 0.75rem 0.5rem;
+          font-size: 0.9rem;
+        }
+        
+        .comparison-tab {
           padding: 0.75rem 0.5rem;
           font-size: 0.9rem;
         }
@@ -506,34 +604,46 @@
             <p>The difference in electricity bills between a sun-exposed unit and a shaded one can be substantial - potentially <strong>$100+ per month</strong> or <strong>$6,000+ over 5 years</strong>.</p>
 
             <h3>Case Study: Good vs Bad Sun Exposure</h3>
-            <p>To illustrate the dramatic difference sun exposure can make, here's a comparison of two neighboring units in the same development. From an inexperienced person's view, these units with similar layout might seem identical and choosing either might be okay, but without consideration of sun direction, the prospective owner might have to spend significantly more money just to cool their unit and feel significantly more uncomfortable in their home.</p>
-
+            
             <div class="case-study-images">
               <img src="../images/neighbour.png" alt="Neighboring units comparison" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 2rem;" />
             </div>
+            
+            <p>To illustrate the dramatic difference sun exposure can make, here's a comparison of two neighboring units in the same development. From an inexperienced person's view, these units with similar layout might seem identical and choosing either might be okay, but without consideration of sun direction, the prospective owner might have to spend significantly more money just to cool their unit and feel significantly more uncomfortable in their home.</p>
 
-            <div class="warning-box">
-              <p><strong>Why the Bad Unit is Problematic:</strong></p>
-              <p>The master bedroom is the most uncomfortable part of the unit. It receives direct afternoon sun on one wall throughout the year, which absorbs heat and continues radiating it into the room even after sunset—making it uncomfortably warm at night. From May to August, all bedrooms get some direct sun; while the angle softens the intensity, it still adds to the overall heat and affects comfort.</p>
-            </div>
-
+            <!-- Dynamic GIF Display -->
             <div class="case-study-images">
               <div class="sun-path-comparison">
                 <div class="sun-path-image">
-                  <img src="../images/bad.gif" alt="Bad Unit - Sun Direction Analysis" />
+                  <img id="unit-gif" src="../images/bad.gif" alt="Unit 565 - Sun Direction Analysis" />
                 </div>
               </div>
             </div>
-      
-            <div class="info-box">
-              <p><strong>Why the Good Unit Works:</strong></p>
-              <p>This unit is well-shielded from the harsh afternoon sun by the neighboring unit. It receives gentle morning sun during parts of the year, which helps remove humidity from the bedroom and living room—keeping the spaces dry and comfortable without being too bright for sleeping in.</p>
-            </div>
 
-            <div class="case-study-images">
-              <div class="sun-path-comparison">
-                <div class="sun-path-image">
-                  <img src="../images/good.gif" alt="Good Unit - Sun Direction Analysis" />
+            <!-- Tab Structure for Unit Comparison -->
+            <div class="comparison-tabs-container">
+              <div class="comparison-tabs">
+                <button class="comparison-tab active" data-tab="bad-unit" data-gif="../images/bad.gif" data-unit="565">❌ Bad Unit (565)</button>
+                <button class="comparison-tab" data-tab="good-unit" data-gif="../images/good.gif" data-unit="567">✅ Good Unit (567)</button>
+              </div>
+              
+              <div class="comparison-tab-content">
+                <div class="comparison-panel active" id="bad-unit-comparison">
+                  <div class="unit-analysis-section">
+                    <h3>Why Unit 565 is Problematic</h3>
+                    <div class="warning-box">
+                      <p>The master bedroom is the most uncomfortable part of the unit. It receives direct afternoon sun on one wall throughout the year, which absorbs heat and continues radiating it into the room even after sunset—making it uncomfortably warm at night. From May to August, all bedrooms get some direct sun; while the angle softens the intensity, it still adds to the overall heat and affects comfort.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="comparison-panel" id="good-unit-comparison">
+                  <div class="unit-analysis-section">
+                    <h3>Why Unit 567 Works</h3>
+                    <div class="info-box">
+                      <p>This unit is well-shielded from the harsh afternoon sun by the neighboring unit. It receives gentle morning sun during parts of the year, which helps remove humidity from the bedroom and living room—keeping the spaces dry and comfortable without being too bright for sleeping in.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -743,21 +853,56 @@
     <!-- BTO Analysis Form Handler -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        // Tab functionality
-        const tabs = document.querySelectorAll('.unit-tab');
-        const panels = document.querySelectorAll('.tab-panel');
+        // Tab functionality for room types
+        const roomTabs = document.querySelectorAll('.unit-tab[data-tab="2-room"], .unit-tab[data-tab="3-room"], .unit-tab[data-tab="4-room"]');
+        const roomPanels = document.querySelectorAll('.tab-panel');
         
-        tabs.forEach(tab => {
+        roomTabs.forEach(tab => {
           tab.addEventListener('click', function() {
             const targetTab = this.getAttribute('data-tab');
             
-            // Remove active class from all tabs and panels
-            tabs.forEach(t => t.classList.remove('active'));
-            panels.forEach(p => p.classList.remove('active'));
+            // Remove active class from all room tabs and panels
+            roomTabs.forEach(t => t.classList.remove('active'));
+            roomPanels.forEach(p => p.classList.remove('active'));
             
             // Add active class to clicked tab and corresponding panel
             this.classList.add('active');
-            document.getElementById(targetTab + '-panel').classList.add('active');
+            const targetPanel = document.getElementById(targetTab + '-panel');
+            if (targetPanel) {
+              targetPanel.classList.add('active');
+            }
+          });
+        });
+        
+        // Tab functionality for unit comparison
+        const comparisonTabs = document.querySelectorAll('.comparison-tab');
+        const comparisonPanels = document.querySelectorAll('.comparison-panel');
+        const gifImage = document.getElementById('unit-gif');
+        
+        comparisonTabs.forEach(tab => {
+          tab.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetTab = this.getAttribute('data-tab');
+            const gifSrc = this.getAttribute('data-gif');
+            const unitNumber = this.getAttribute('data-unit');
+            
+            // Remove active class from all comparison tabs and panels
+            comparisonTabs.forEach(t => t.classList.remove('active'));
+            comparisonPanels.forEach(p => p.classList.remove('active'));
+            
+            // Add active class to clicked tab and corresponding panel
+            this.classList.add('active');
+            const targetPanel = document.getElementById(targetTab + '-comparison');
+            if (targetPanel) {
+              targetPanel.classList.add('active');
+            }
+            
+            // Update the GIF source and alt text
+            if (gifImage && gifSrc) {
+              gifImage.src = gifSrc;
+              gifImage.alt = `Unit ${unitNumber} - Sun Direction Analysis`;
+            }
           });
         });
         
