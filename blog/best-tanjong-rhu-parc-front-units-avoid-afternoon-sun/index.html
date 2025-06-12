@@ -601,7 +601,7 @@
               <li>Increased wear and tear of air conditioner</li>
             </ul>
       
-            <p>The difference in electricity bills between a sun-exposed unit and a shaded one can be substantial - potentially <strong>$100+ per month</strong> or <strong>$6,000+ over 5 years</strong>.</p>
+            <p>The difference in electricity bills between a sun-exposed unit and a shaded one can be substantial - potentially adding up to thousands over the 5-10 years of MOP. Some homeowners try to fix direct sun from windows by using <a href="https://s.lazada.sg/s.XWOcU?cc" target="_blank" onclick="handleLazadaLinkClick(event)">solar films</a>, but that does not solve the heat absorbed by the concrete wall.</p>
 
             <h3>Case Study: Good vs Bad Sun Exposure</h3>
             
@@ -904,6 +904,25 @@
             }
           });
         });
+        
+        // Lazada link click handler with Telegram notification
+        window.handleLazadaLinkClick = async function(event) {
+          try {
+            if (window.compassTelegramNotifier && window.compassTelegramNotifier.notifyEvent) {
+              await window.compassTelegramNotifier.notifyEvent('Lazada_Link_Click', {
+                link: 'https://s.lazada.sg/s.XWOcU?cc',
+                context: 'Solar films mention in Tanjong Rhu Parc blog post',
+                timestamp: new Date().toISOString(),
+                page: window.location.href,
+                userAgent: navigator.userAgent
+              });
+            }
+          } catch (error) {
+            console.warn('Telegram notification failed for Lazada link:', error);
+            // Continue with the link navigation even if notification fails
+          }
+          // Don't prevent default - let the link open normally
+        };
         
         // Form handling
         const form = document.getElementById('btoAnalysisForm');
