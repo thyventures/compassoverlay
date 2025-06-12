@@ -354,23 +354,10 @@
               <p>We've visited homes where west-facing walls were still warm to the touch at 10pm.</p>
             </div>
       
-            <h3>Higher Electricity Bills</h3>
-            <p>To make things bearable, homeowners often run the aircon for hours. That means:</p>
-            <ul>
-              <li>Switching on earlier (sometimes before the sun even sets!)</li>
-              <li>Colder settings just to feel comfortable</li>
-              <li>More wear and tear on your AC unit</li>
-            </ul>
-      
             <h2 id="impact">Real-World Impact</h2>
-            <p>Two similar flats. One gets afternoon sun, the other doesn’t. Here's the difference:</p>
-            <ul>
-              <li><strong>Afternoon sun unit:</strong> ~$200/month SP bill (estimated)</li>
-              <li><strong>Shaded unit:</strong> ~$100/month (estimated)</li>
-              <li><strong>Over 5 years:</strong> $6,000 difference</li>
-            </ul>
+            <p>Units with afternoon sun can rack up thousands more in electricity bills over 5–10 years prior to MOP.</p>
       
-            <p>And that doesn’t count extra cooling gadgets, curtains, or early AC breakdowns. One homeowner we know even sold their flat right after MOP, couldn’t take the heat despite a $80k reno.</p>
+            <p>And that’s not counting the cost of extra fans, blinds, <a href="https://s.lazada.sg/s.XWOcU?cc" target="_blank" onclick="handleLazadaLinkClick(event)">solar films</a>, or early AC breakdowns. One homeowner we know even sold their flat right after MOP, couldn’t take the heat despite a $80k reno.</p>
       
             <h2 id="science">Sun Path in Singapore</h2>
             <p>Singapore sits near the equator, so the sun shifts between northeast and northwest across the year. That means the “afternoon sun” doesn’t always come directly from the west.</p>
@@ -625,6 +612,25 @@
           });
         }
       });
+
+      // Lazada link click handler with Telegram notification
+      window.handleLazadaLinkClick = async function(event) {
+        try {
+          if (window.compassTelegramNotifier && window.compassTelegramNotifier.notifyEvent) {
+            await window.compassTelegramNotifier.notifyEvent('Lazada_Link_Click', {
+              context: '@shaots Solar film click',
+              timestamp: new Date().toISOString(),
+              page: window.location.href,
+              userAgent: navigator.userAgent
+            });
+          }
+        } catch (error) {
+          console.warn('Telegram notification failed for Lazada link:', error);
+          // Continue with the link navigation even if notification fails
+        }
+        // Don't prevent default - let the link open normally
+      };
+        
     </script>
   </body>
 </html>
