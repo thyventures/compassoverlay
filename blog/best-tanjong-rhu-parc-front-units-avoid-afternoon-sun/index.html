@@ -216,226 +216,123 @@
         margin-bottom: 0;
       }
       
-      @media (max-width: 768px) {
-        .sun-path-image {
-          width: 100%;
-        }
-        
-        .unit-images-placeholder {
-          flex-direction: column;
-        }
-        
-        .unit-tab {
-          padding: 0.75rem 0.5rem;
-          font-size: 0.9rem;
-        }
-        
-        .comparison-tab {
-          padding: 0.75rem 0.5rem;
-          font-size: 0.9rem;
-        }
-      }
-      
-      /* Tab Structure Styles */
-      .unit-tabs-container {
-        margin-top: 1.5rem;
-      }
-      
-      .unit-tabs {
+      .carousel-navigation {
         display: flex;
-        border-bottom: 2px solid #e0e0e0;
-        margin-bottom: 1.5rem;
-        gap: 0;
-      }
-      
-      .unit-tab {
-        background: #f8f9fa;
-        border: 1px solid #e0e0e0;
-        border-bottom: none;
-        padding: 1rem 1.5rem;
-        cursor: pointer;
-        font-weight: 600;
-        color: #666;
-        transition: all 0.3s ease;
-        flex: 1;
-        text-align: center;
-      }
-      
-      .unit-tab:first-child {
-        border-radius: 8px 0 0 0;
-      }
-      
-      .unit-tab:last-child {
-        border-radius: 0 8px 0 0;
-      }
-      
-      .unit-tab:hover {
-        background: #e9ecef;
-        color: #333;
-      }
-      
-      .unit-tab.active {
-        background: #d1ecf1;
-        color: #0c5460;
-        border-color: #bee5eb;
-        position: relative;
-      }
-      
-      .unit-tab.active::after {
-        content: '';
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background: #bee5eb;
-      }
-      
-      .unit-tab-content {
-        position: relative;
-        min-height: 200px;
-      }
-      
-      .tab-panel {
-        display: none;
-        animation: fadeIn 0.3s ease-in-out;
-      }
-      
-      .tab-panel.active {
-        display: block;
-      }
-      
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      
-      /* BTO Analysis Form Styles */
-      .bto-analysis-form {
-        background: #f8f9fa;
-        border: 1px solid #e0e0e0;
-        border-radius: 8px;
-        padding: 2rem;
-        margin: 2rem 0;
-      }
-      
-      .bto-analysis-form h4 {
-        color: #2c3e50;
-        margin-bottom: 1.5rem;
-        font-size: 1.25rem;
-      }
-      
-      .form-group {
-        margin-bottom: 1.5rem;
-      }
-      
-      .form-group label {
-        display: block;
-        margin-bottom: 0.5rem;
-        font-weight: 600;
-        color: #333;
-      }
-      
-      .form-group input,
-      .form-group textarea {
-        width: 100%;
-        padding: 0.75rem;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        font-size: 1rem;
-        transition: border-color 0.3s ease;
-      }
-      
-      .form-group input:focus,
-      .form-group textarea:focus {
-        outline: none;
-        border-color: #007bff;
-        box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
-      }
-      
-      .form-group small {
-        display: block;
-        margin-top: 0.25rem;
-        color: #666;
-        font-size: 0.875rem;
-      }
-      
-      .form-submit-btn {
-        background: #007bff;
-        color: white;
-        border: none;
-        padding: 1rem 2rem;
-        border-radius: 4px;
-        font-size: 1rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-      }
-      
-      .form-submit-btn:hover {
-        background: #0056b3;
-      }
-      
-      .form-submit-btn:disabled {
-        background: #6c757d;
-        cursor: not-allowed;
-      }
-      
-      .process-info {
-        margin-top: 2rem;
-        padding-top: 1.5rem;
-        border-top: 1px solid #e0e0e0;
-      }
-      
-      .process-info h4 {
-        color: #2c3e50;
-        margin-bottom: 1rem;
-        font-size: 1.1rem;
-      }
-      
-      .process-info ol {
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.5rem 0;
         margin: 0;
-        padding-left: 1.5rem;
       }
       
-      .process-info li {
-        margin-bottom: 0.75rem;
-        line-height: 1.5;
-      }
-      
-      /* Option 1 Layout Styles */
-      .option-1-container {
+      .carousel-prev,
+      .carousel-next {
+        background: none;
+        color: #333;
+        border: none;
+        width: auto;
+        height: auto;
+        border-radius: 0;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: color 0.3s ease;
         display: flex;
-        gap: 2rem;
-        align-items: flex-start;
-        margin-bottom: 2rem;
+        align-items: center;
+        justify-content: center;
+        padding: 0.25rem;
       }
       
-      .option-1-content {
-        flex: 1;
-        min-width: 0;
+      .carousel-prev:hover,
+      .carousel-next:hover {
+        color: #666;
+        background: none;
+        transform: none;
       }
       
-      .option-1-image {
-        flex: 0 0 200px;
-        max-width: 200px;
+      /* Reddit Carousel Styles */
+      .reddit-carousel-container {
+        position: relative;
+        max-width: 800px;
+        margin-bottom: 1rem;
+        border-radius: 12px;
+        overflow: hidden;
       }
       
-      .option-1-image img {
+      .reddit-carousel {
+        position: relative;
         width: 100%;
+        min-height: 200px;
+        overflow: visible;
+      }
+      
+      .reddit-post {
+        position: static;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.5s ease-in-out;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 0.5rem;
+        height: auto;
+      }
+      
+      .reddit-post.active {
+        opacity: 1;
+        visibility: visible;
+        position: static;
+      }
+      
+      .reddit-post:not(.active) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+      }
+      
+      .reddit-image-container {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .reddit-image-container img {
+        max-width: 100%;
+        max-height: 350px;
+        width: auto;
         height: auto;
         border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        margin-top: 0px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 0.5rem;
+      }
+      
+      .reddit-link {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+      
+      .reddit-link:hover {
+        color: #0056b3;
+        text-decoration: underline;
       }
       
       @media (max-width: 768px) {
+        .reddit-image-container img {
+          max-height: 300px;
+        }
+        
+        .carousel-prev,
+        .carousel-next {
+          font-size: 1.2rem;
+          padding: 0.2rem;
+        }
+        
         .option-1-container {
           flex-direction: column;
           gap: 1.5rem;
@@ -591,35 +488,84 @@
             <p>The development features modern 2-room, 3-room, and 4-room flats, all classified as Prime flats. With luxurious amenities, prime location access, and sophisticated design, Tanjong Rhu Parc offers residents an elevated living experience in the heart of the city.</p>
       
             <h2 id="why-avoiding-afternoon-sun-matters">Why Avoiding Afternoon Sun is Crucial</h2>
-                 
-           <p>Feeling extra warm in the afternoon? You are not alone. <br><br>
-            In a tropical climate like Singapore, afternoon sun is particularly intense between <b>2pm and 6pm</b>. <br><br>
-            Units that receive direct afternoon sun often experience:</p>
+
+            <p>In Singapore’s tropical climate, the afternoon sun can turn your home into an oven. It leads to:</p>
             <ul>
-              <li>Hot and stuffy living conditions, especially in bedrooms</li>
-              <li>Higher air conditioning bills (up to 50% more)</li>
-              <li>Walls that stay warm well into the night</li>
-              <li>Increased maintenance costs of aircons due to increased usage</li>
+              <li>🔥 Unbearably hot bedrooms — even with fans, <a href="https://s.lazada.sg/s.XWOcU?cc" target="_blank" onclick="handleLazadaLinkClick(event)">solar films</a> and curtains</li>
+              <li>💸 Higher aircon bills — often up to 50% more</li>
+              <li>🌙 Walls that radiate heat well into the night</li>
+              <li>🧰 Faster wear and tear on aircon units</li>
             </ul>
       
-            <p>The difference in electricity bills between a sun-exposed unit and a shaded one can be substantial - potentially adding up to thousands over the 5-10 years of the minimum occupation period. <br><br>
-              
-              Some homeowners try to fix direct sun exposure from windows by using <a href="https://s.lazada.sg/s.XWOcU?cc" target="_blank" onclick="handleLazadaLinkClick(event)">solar films</a>, but that does not solve the problem of heat being absorbed by the concrete wall.</p>
+            <p>For those working from home or children studying, the heat isn’t just uncomfortable — it affects focus, well-being, and can cause fatigue or headaches.</p>
 
+            <h3>Real Stories From Sun-Facing HDB Homes</h3>
+            <p>Don't just take our word for it. These Reddit users shared their real struggles living in sun-facing HDB units:</p>
 
+            <!-- Reddit Stories Carousel -->
+            <div class="reddit-carousel-container">
+              <div class="reddit-carousel">
+                <div class="reddit-post active" data-index="0">
+                  <div class="reddit-image-container">
+                    <div class="carousel-navigation">
+                      <button class="carousel-prev" onclick="changeSlide(-1)">‹</button>
+                      <a href="https://www.reddit.com/r/askSingapore/comments/gt95lf/how_to_keep_your_room_cool_in_this_hot_singapore/" target="_blank" class="reddit-link">View original post →</a>
+                      <button class="carousel-next" onclick="changeSlide(1)">›</button>
+                    </div>
+                    <img src="../images/reddit/post4.png" alt="Reddit post about keeping room cool in hot Singapore weather" />
+                  </div>
+                </div>
 
-            <h3>Same Same But Different? <br>
-            <i>Good vs Bad Sun Exposure for 2 Side-by-side Units</i></h3>
+                <div class="reddit-post" data-index="1">
+                  <div class="reddit-image-container">
+                    <div class="carousel-navigation">
+                      <button class="carousel-prev" onclick="changeSlide(-1)">‹</button>
+                      <a href="https://www.reddit.com/r/singapore/comments/tfesmu/comment/i0wgn1o/" target="_blank" class="reddit-link">View original post →</a>
+                      <button class="carousel-next" onclick="changeSlide(1)">›</button>
+                    </div>
+                    <img src="../images/reddit/post3.png" alt="Reddit comment about west-facing wall heat issues" />
+                  </div>
+                </div>
+
+                <div class="reddit-post" data-index="2">
+                  <div class="reddit-image-container">
+                    <div class="carousel-navigation">
+                      <button class="carousel-prev" onclick="changeSlide(-1)">‹</button>
+                      <a href="https://www.reddit.com/r/singapore/comments/mj3azn/finding_ways_to_cool_hdb_room/" target="_blank" class="reddit-link">View original post →</a>
+                      <button class="carousel-next" onclick="changeSlide(1)">›</button>
+                    </div>
+                    <img src="../images/reddit/post2.png" alt="Reddit post about finding ways to cool HDB room" />
+                  </div>
+                </div>
+
+                <div class="reddit-post" data-index="3">
+                  <div class="reddit-image-container">
+                    <div class="carousel-navigation">
+                      <button class="carousel-prev" onclick="changeSlide(-1)">‹</button>
+                      <a href="https://www.reddit.com/r/askSingapore/comments/1l9hwj0/dealing_with_the_heat_with_sunfacing_hdb_room/" target="_blank" class="reddit-link">View original post →</a>
+                      <button class="carousel-next" onclick="changeSlide(1)">›</button>
+                    </div>
+                    <img src="../images/reddit/post1.png" alt="Reddit post about dealing with heat in sun-facing HDB room" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p>These real experiences show how harsh afternoon sun can seriously impact comfort, focus, and well-being.<br>
+            <strong>The good news? It's completely avoidable — if you choose the right unit.</strong><br></p>
+
+            <h3>Two Side-by-Side Homes — One Big Difference</h3>
+            <p>See how we can help you choose a home without harsh afternoon sun.</p>
             
             <div class="case-study-images">
               <img src="../images/neighbour.png" alt="Neighboring units comparison" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 2rem;" />
             </div>
             
-            <p>To illustrate the dramatic difference afternoon sun exposure can make, here's a comparison of two neighboring units. <br><br>
-              At first glance, both units have similar layout and it may seem like choosing either unit might be okay. <br><br>
-              However, one of these homeowners will likely feel <b>significantly </b>more uncomfortable in their home and will have to spend more money to cool down, due to afternoon sun exposure. <br><br>
-            The <b>Compass Overlay</b> app makes it easy to see exactly how the afternoon sun (W) and morning sun (E) streams into the unit of your choice. The GIFs below are extracted from the <b>Compass Overlay</b> app and represent the actual sun direction as received by these units throughout the year. The East and West sun are each represented by an arc as the sun moves slightly throughout the year. 
-            </p>
+            <p>At first glance, these two neighboring units look <strong>nearly identical</strong>. Same block, same layout — so either one should be fine, right?</p>
+
+            <p>But one of them is hit hard by direct afternoon sun, making it <strong>noticeably hotter</strong>, <strong>less comfortable</strong>, and more <strong>expensive to cool</strong>.</p>
+
+            <p>The animations below show <strong>how sunlight moves through each unit</strong> over the course of the year. The arcs represent the path of the <strong>morning sun (E)</strong> and <strong>afternoon sun (W)</strong>, which shifts throughout the year.</p>
 
             <!-- Dynamic GIF Display -->
             <div class="case-study-images">
@@ -642,7 +588,9 @@
                   <div class="unit-analysis-section">
                     <h3>Why Unit 565 is Problematic</h3>
                     <div class="warning-box">
-                      <p>This unit receives direct afternoon sun (W) on one wall throughout the year, and this being the master bedroom makes it most uncomfortable for the homeowners. The master bedroom wall absorbs a lot of hear from the intense afteroon sun and continues radiating it into the room even after sunset, making it uncomfortably warm at night. From May to August, all bedrooms receive some direct afternoon sun shining in at an angle; while streaming in at an angle softens the intensity of the heat, it still warms the bedrooms uncomfortaly during these months of the year.</p>
+                      <p>This unit gets <strong>direct afternoon sun</strong> on its master bedroom wall <strong>throughout the year</strong>. That wall <strong>absorbs heat</strong> and <strong>releases it well into the night</strong> — making sleep uncomfortable even after sunset.</p>
+
+                      <p>From April to August, <strong>afternoon sun (W)</strong> also enters the room windows, <strong>raising indoor temperatures</strong> and <strong>increasing reliance on aircon</strong>.</p>
                     </div>
                   </div>
                 </div>
@@ -651,17 +599,14 @@
                   <div class="unit-analysis-section">
                     <h3>Why Unit 567 Works</h3>
                     <div class="info-box">
-                      <p>This unit is well-shielded from the harsh afternoon sun by the neighboring unit. It receives gentle morning sun (E) from April to August, which helps remove humidity from the bedroom and living room. Some morning sun helps keep these areas dry and comfortable without being too bright for sleeping in.</p>
+                      <p>This unit is <strong>shielded from afternoon sun</strong> by the neighboring unit. The master bedroom wall receives <strong>direct morning sun</strong>, but this is more <strong>tolerable</strong> since most people are away at school or work in the morning and afternoon, and the wall would have cooled down by evening.</p>
+
+                      <p>From April to August, morning sun (E) enters the room windows, helping to <strong>remove humidity</strong> and keep the space <strong>fresh and comfortable</strong> without overheating.</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div class="info-box">
-              <p><strong>Learn more:</strong> Read our comprehensive guide on <a href="../why-avoid-afternoon-sun-in-singapore-hdb-units/">why avoiding afternoon sun in Singapore HDB units matters</a>.</p>
-            </div>
-      
             <h2 id="site-map">Tanjong Rhu Parc: Which Units are the Best to Avoid Afternoon Sun?</h2>
             <div class="site-map-section">
             <img src="siteplan.png" alt="Tanjong Rhu Parc Site Plan with Best Units Highlighted" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); margin-bottom: 1rem;" />
@@ -931,7 +876,29 @@
           }
           // Don't prevent default - let the link open normally
         };
+
+        // Reddit Carousel functionality
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.reddit-post');
         
+        window.changeSlide = function(direction) {
+          // Remove active class from current slide
+          slides[currentSlideIndex].classList.remove('active');
+          
+          // Calculate new slide index
+          currentSlideIndex += direction;
+          
+          // Wrap around if necessary
+          if (currentSlideIndex >= slides.length) {
+            currentSlideIndex = 0;
+          } else if (currentSlideIndex < 0) {
+            currentSlideIndex = slides.length - 1;
+          }
+          
+          // Add active class to new slide
+          slides[currentSlideIndex].classList.add('active');
+        };
+
         // Form handling
         const form = document.getElementById('btoAnalysisForm');
         
